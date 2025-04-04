@@ -1,0 +1,11 @@
+fields:
+    name:
+        label: Pilar
+        span: auto
+        required: 1
+        type: text
+    short:
+        label: Abreviatura
+        span: auto
+        required: 1
+        type: text

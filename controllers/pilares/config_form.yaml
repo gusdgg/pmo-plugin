@@ -1,0 +1,10 @@
+name: Pilares
+form: $/gibraltarsf/pmo/models/pilar/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Pilar
+defaultRedirect: gibraltarsf/pmo/pilares
+create:
+    redirect: 'gibraltarsf/pmo/pilares/update/:id'
+    redirectClose: gibraltarsf/pmo/pilares
+update:
+    redirect: gibraltarsf/pmo/pilares
+    redirectClose: gibraltarsf/pmo/pilares

@@ -1,0 +1,17 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table gibraltarsf_pmo_roles'
+    - ./builder_table_create_gibraltarsf_pmo_roles.php
+1.0.3:
+    - 'Created table gibraltarsf_pmo_plilares'
+    - ./builder_table_create_gibraltarsf_pmo_plilares.php
+1.0.4:
+    - 'Created table gibraltarsf_pmo_mejoras'
+    - builder_table_create_gibraltarsf_pmo_mejoras.php
+1.0.5:
+    - 'Created table gibraltarsf_pmo_beneficios'
+    - builder_table_create_gibraltarsf_pmo_beneficios.php
+1.0.6:
+    - 'Created table gibraltarsf_pmo_negativos'
+    - builder_table_create_gibraltarsf_pmo_negativos.php

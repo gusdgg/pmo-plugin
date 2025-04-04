@@ -1,0 +1,12 @@
+columns:
+    name:
+        label: Mejora
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'Creado el'
+        type: datetime
+    updated_at:
+        label: 'Actualizado el'
+        type: datetime

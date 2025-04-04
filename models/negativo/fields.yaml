@@ -1,0 +1,7 @@
+fields:
+    name:
+        label: Efecto negativo
+        span: auto
+        type: text
+        comment: Es el efecto negativo en un área si NO se tramita una idea o iniciativa
+        required: 1

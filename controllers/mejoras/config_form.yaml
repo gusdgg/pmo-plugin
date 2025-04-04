@@ -1,0 +1,10 @@
+name: Mejoras
+form: $/gibraltarsf/pmo/models/mejora/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Mejora
+defaultRedirect: gibraltarsf/pmo/mejoras
+create:
+    redirect: 'gibraltarsf/pmo/mejoras/update/:id'
+    redirectClose: gibraltarsf/pmo/mejoras
+update:
+    redirect: gibraltarsf/pmo/mejoras
+    redirectClose: gibraltarsf/pmo/mejoras

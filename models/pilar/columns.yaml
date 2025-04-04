@@ -1,0 +1,17 @@
+columns:
+    name:
+        label: Pilares
+        type: text
+        searchable: true
+        sortable: true
+    short:
+        label: Abreviatura
+        type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'Creado el'
+        type: datetime
+    updated_at:
+        label: 'Actualizado el'
+        type: datetime

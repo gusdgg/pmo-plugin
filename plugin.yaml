@@ -1,0 +1,63 @@
+plugin:
+    name: 'gibraltarsf.pmo::lang.plugin.name'
+    description: 'gibraltarsf.pmo::lang.plugin.description'
+    author: GibraltarSF
+    icon: 'fas icon-project-diagram'
+    replaces: {  }
+navigation:
+    main-menu-pmo:
+        label: PMO
+        url: gibraltarsf/pmo/home
+        icon: icon-puzzle-piece
+        permissions:
+            - gibraltarsf.pmo
+        sideMenu:
+            side-menu-ideas:
+                label: Ideas
+                url: gibraltarsf/pmo/ideas
+                icon: icon-lightbulb-o
+                permissions:
+                    - gibraltarsf.pmo.ideas
+            side-menu-proyectos:
+                label: Proyectos
+                url: gibraltarsf/pmo/proyectos
+                icon: icon-indent
+                permissions:
+                    - gibraltarsf.pmo.proyectos
+            side-menu-tablas:
+                label: Tablas
+                url: gibraltarsf/pmo/tablas
+                icon: icon-database
+                permissions:
+                    - gibraltarsf.pmo.tablas
+permissions:
+    gibraltarsf.pmo:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'Acceso al módulo'
+    gibraltarsf.pmo.tablas:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'Acceso a Tablas'
+    gibraltarsf.pmo.roles:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'Acceso a Roles'
+    gibraltarsf.pmo.roles.abm:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'ABM de Roles'
+    gibraltarsf.pmo.pilares:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'Acceso a Pilares'
+    gibraltarsf.pmo.pilares.abm:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'ABM de Pilares'
+    gibraltarsf.pmo.ideas:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'Acceso a Ideas'
+    gibraltarsf.pmo.ideas.abm:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'ABM de Ideas'
+    gibraltarsf.pmo.proyectos   :
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'Acceso a Proyectos'
+    gibraltarsf.pmo.proyectos.abm:
+        tab: 'gibraltarsf.pmo::lang.plugin.name'
+        label: 'ABM de Proyectos'        

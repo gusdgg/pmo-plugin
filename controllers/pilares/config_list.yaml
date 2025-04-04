@@ -1,0 +1,12 @@
+list: $/gibraltarsf/pmo/models/pilar/columns.yaml
+modelClass: Gibraltarsf\Pmo\Models\Pilar
+title: Pilares
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'gibraltarsf/pmo/pilares/update/:id'

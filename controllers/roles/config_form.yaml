@@ -1,0 +1,10 @@
+name: Roles
+form: $/gibraltarsf/pmo/models/role/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Role
+defaultRedirect: gibraltarsf/pmo/roles
+create:
+    redirect: 'gibraltarsf/pmo/roles/update/:id'
+    redirectClose: gibraltarsf/pmo/roles
+update:
+    redirect: gibraltarsf/pmo/roles
+    redirectClose: gibraltarsf/pmo/roles

@@ -1,0 +1,10 @@
+name: Beneficios
+form: $/gibraltarsf/pmo/models/beneficio/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Beneficio
+defaultRedirect: gibraltarsf/pmo/beneficios
+create:
+    redirect: 'gibraltarsf/pmo/beneficios/update/:id'
+    redirectClose: gibraltarsf/pmo/beneficios
+update:
+    redirect: gibraltarsf/pmo/beneficios
+    redirectClose: gibraltarsf/pmo/beneficios

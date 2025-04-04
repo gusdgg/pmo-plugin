@@ -1,0 +1,10 @@
+name: Negativos
+form: $/gibraltarsf/pmo/models/negativo/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Negativo
+defaultRedirect: gibraltarsf/pmo/negativos
+create:
+    redirect: 'gibraltarsf/pmo/negativos/update/:id'
+    redirectClose: gibraltarsf/pmo/negativos
+update:
+    redirect: gibraltarsf/pmo/negativos
+    redirectClose: gibraltarsf/pmo/negativos
