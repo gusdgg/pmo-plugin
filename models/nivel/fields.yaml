@@ -1,0 +1,6 @@
+fields:
+    name:
+        label: Nivel
+        span: auto
+        type: text
+        required: 1

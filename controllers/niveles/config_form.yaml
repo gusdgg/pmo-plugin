@@ -1,0 +1,10 @@
+name: Niveles
+form: $/gibraltarsf/pmo/models/nivel/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Nivel
+defaultRedirect: gibraltarsf/pmo/niveles
+create:
+    redirect: 'gibraltarsf/pmo/niveles/update/:id'
+    redirectClose: gibraltarsf/pmo/niveles
+update:
+    redirect: gibraltarsf/pmo/niveles
+    redirectClose: gibraltarsf/pmo/niveles

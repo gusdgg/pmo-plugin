@@ -2,16 +2,37 @@
     - 'Initialize plugin.'
 1.0.2:
     - 'Created table gibraltarsf_pmo_roles'
-    - ./builder_table_create_gibraltarsf_pmo_roles.php
+    - builder_table_create_gibraltarsf_pmo_roles.php
 1.0.3:
+    - 'Roles Seeder'
+    - seeder103.php
+1.0.4:
     - 'Created table gibraltarsf_pmo_plilares'
     - ./builder_table_create_gibraltarsf_pmo_plilares.php
-1.0.4:
+1.0.5:
+    - 'Pilares Seeder'
+    - seeder105.php
+1.0.6:
     - 'Created table gibraltarsf_pmo_mejoras'
     - builder_table_create_gibraltarsf_pmo_mejoras.php
-1.0.5:
+1.0.7:
+    - 'Mejoras Seeder'
+    - seeder107.php
+1.0.8:
     - 'Created table gibraltarsf_pmo_beneficios'
     - builder_table_create_gibraltarsf_pmo_beneficios.php
-1.0.6:
+1.0.9:
+    - 'Beneficios Seeder'
+    - seeder109.php
+1.0.10:
     - 'Created table gibraltarsf_pmo_negativos'
     - builder_table_create_gibraltarsf_pmo_negativos.php
+1.0.11:
+    - 'Negativos Seeder'
+    - seeder1011.php
+1.0.12:
+    - 'Created table gibraltarsf_pmo_niveles'
+    - builder_table_create_gibraltarsf_pmo_niveles.php
+1.0.13:
+    - 'Niveles Seeder'
+    - seeder1013.php
