@@ -13,7 +13,7 @@ class Pilar extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'gibraltarsf_pmo_plilares';
+    public $table = 'gibraltarsf_pmo_pilares';
 
     /**
      * @var array Validation rules
@@ -34,4 +34,19 @@ class Pilar extends Model
      * @var array Attribute names to encode and decode using JSON.
      */
     public $jsonable = [];
+
+    /*
+    public function getPilarOptions($value, $formData)
+    {
+        
+            $options = array();
+            $pilares = Pilar::orderBy('name')->get();
+            foreach ($pilares as $pilar) {
+                $options[$pilar->id] = [$pilar->name , 'icon-circle  ' . $pilar->color];
+            }
+            
+            return $options;
+            
+    }
+    */
 }

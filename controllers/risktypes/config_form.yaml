@@ -1,0 +1,10 @@
+name: Tipos de riesgo
+form: $/gibraltarsf/pmo/models/risktype/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Risktype
+defaultRedirect: gibraltarsf/pmo/risktypes
+create:
+    redirect: 'gibraltarsf/pmo/risktypes/update/:id'
+    redirectClose: gibraltarsf/pmo/risktypes
+update:
+    redirect: gibraltarsf/pmo/risktypes
+    redirectClose: gibraltarsf/pmo/risktypes

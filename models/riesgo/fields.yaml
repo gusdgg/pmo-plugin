@@ -1,0 +1,79 @@
+fields:
+    name:
+        label: Riesgo
+        span: full
+        type: text
+    risktype:
+        label: Tipo
+        span: auto
+        type: relation
+        select: name
+    status:
+        label: Estado
+        span: auto
+        type: dropdown
+        default: Abierto
+        options:
+            - Abierto
+            - Cerrado
+    description:
+        label: Descripción
+        span: auto
+        type: text
+    notes:
+        label: Notas
+        span: auto
+        type: textarea
+        size: small
+    response:
+        label: Respuesta al riesgo
+        span: auto
+        type: dropdown
+        options:
+            - Aceptar
+            - Mitigar
+            - Transferir
+            - Evitar
+    response_plan:
+        label: Plan de respuesta
+        span: auto
+        type: text
+            
+    owner:
+        label: Propietario
+        span: auto
+        type: relation
+        select: concat(first_name, ' ', last_name)
+    priority:
+        label: Prioridad
+        span: storm
+        cssClass: col-sm-4
+        type: dropdown
+        options:
+            - Alta
+            - Media
+            - Baja
+    severity:
+        label: Severidad
+        span: storm
+        cssClass: col-sm-4
+        type: dropdown
+        options:
+            - Muy baja
+            - Baja
+            - Media
+            - Alta
+            - Muy alta
+        
+    likelihood:
+        label: Probabilidad
+        span: storm
+        cssClass: col-sm-4
+        type: dropdown
+        options:
+            - Muy baja
+            - Baja
+            - Media
+            - Alta
+            - Muy alta
+

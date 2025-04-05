@@ -3,10 +3,12 @@ fields:
         label: Puntuación
         span: auto
         type: text
+        required: 1
     value:
         label: Valor
         span: auto
         type: number
+        required: 1
     icon:
         label: 'Ícono'
         span: auto

@@ -1,0 +1,42 @@
+columns:
+    name:
+        label: Riesgo
+        type: text
+    status:
+        label: Estado
+        type: text
+    risktype:
+        label: Tipo
+        type: text
+    description:
+        label: Descripción
+        type: text
+    response_plan:
+        label: Plan de respuesta
+        type: text
+    notes:
+        label: Notas
+        type: text
+    response:
+        label: Respuesta al riesgo
+        type: text
+    owner_id:
+        label: Propietario
+        type: number
+    priority:
+        label: Prioridad
+        type: text
+    severity:
+        label: Severidad
+        type: text
+    likelihood:
+        label: Probabilidad
+        type: text
+    created_at:
+        label: Creado el
+        type: datetime
+        format: d-m-Y H:i
+    updated_at:
+        label: Actualizado el
+        type: datetime
+        format: d-m-Y H:i

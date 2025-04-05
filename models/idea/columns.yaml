@@ -1,0 +1,52 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: name
+        type: text
+    code:
+        label: code
+        type: text
+    status:
+        label: status
+        type: text
+    calification:
+        label: calification
+        type: text
+    requestor_id:
+        label: requestor_id
+        type: number
+    pilar_id:
+        label: pilar_id
+        type: number
+    supervisor_id:
+        label: supervisor_id
+        type: number
+    situacion:
+        label: situacion
+        type: text
+    mejoras:
+        label: mejoras
+        type: text
+    objetivo:
+        label: objetivo
+        type: text
+    alcance:
+        label: alcance
+        type: text
+    created_by:
+        label: created_by
+        type: number
+    pm_id:
+        label: pm_id
+        type: number
+    sponsor_id:
+        label: sponsor_id
+        type: number
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

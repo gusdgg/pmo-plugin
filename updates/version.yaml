@@ -7,8 +7,8 @@
     - 'Roles Seeder'
     - seeder103.php
 1.0.4:
-    - 'Created table gibraltarsf_pmo_plilares'
-    - ./builder_table_create_gibraltarsf_pmo_plilares.php
+    - 'Created table gibraltarsf_pmo_pilares'
+    - builder_table_create_gibraltarsf_pmo_pilares.php
 1.0.5:
     - 'Pilares Seeder'
     - seeder105.php
@@ -42,3 +42,15 @@
 1.0.15:
     - 'Scores Seeder'
     - seeder1015.php
+1.0.16:
+    - 'Created table gibraltarsf_pmo_risktypes'
+    - builder_table_create_gibraltarsf_pmo_risktypes.php
+1.0.17:
+    - 'Risktypes Seeder'
+    - seeder1017.php
+1.0.18:
+    - 'Created table gibraltarsf_pmo_riesgos'
+    - builder_table_create_gibraltarsf_pmo_riesgos.php
+1.0.19:
+    - 'Created table gibraltarsf_pmo_ideas'
+    - builder_table_create_gibraltarsf_pmo_ideas.php

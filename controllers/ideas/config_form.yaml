@@ -1,0 +1,10 @@
+name: Ideas
+form: $/gibraltarsf/pmo/models/idea/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Idea
+defaultRedirect: gibraltarsf/pmo/ideas
+create:
+    redirect: 'gibraltarsf/pmo/ideas/update/:id'
+    redirectClose: gibraltarsf/pmo/ideas
+update:
+    redirect: gibraltarsf/pmo/ideas
+    redirectClose: gibraltarsf/pmo/ideas

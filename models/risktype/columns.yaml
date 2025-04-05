@@ -1,20 +1,20 @@
 columns:
     name:
-        label: Pilares
+        label: 'Tipo de riesgo'
         type: text
         searchable: true
         sortable: true
-    short:
-        label: Abreviatura
-        type: text
-        searchable: true
-        sortable: true
+    icon:
+        label: Ícono
+        type: icon
     color:
-        label: Color
+        label: color
         type: colorpicker
     created_at:
         label: 'Creado el'
         type: datetime
+        sortable: true
     updated_at:
         label: 'Actualizado el'
         type: datetime
+        sortable: true

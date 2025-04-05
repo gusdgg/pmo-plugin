@@ -1,0 +1,15 @@
+fields:
+    name:
+        label: 'Tipo de riesgo'
+        span: auto
+        type: text
+        required: 1
+    icon:
+        label: 'Ícono'
+        span: auto
+        type: 'iconpicker'
+        libraries: ~/modules/backend/formwidgets/iconpicker/meta/libraries.yaml
+    color:
+        label: Color
+        span: auto
+        type: colorpicker

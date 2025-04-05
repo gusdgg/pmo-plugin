@@ -1,0 +1,92 @@
+fields:
+    requestor:
+        label: 'Solicitante'
+        span: storm
+        cssClass: col-sm-4
+        type: relation
+        emptyOption: 'Seleccione un solicitante...'
+        select: concat(first_name, ' ', last_name)
+    pilar:
+        label: 'Pilar'
+        span: storm
+        cssClass: col-sm-4
+        type: relation
+        emptyOption: 'Seleccione un pilar...'
+        select: name
+    supervisor:
+        label: 'Supervisor'
+        span: storm
+        cssClass: col-sm-4
+        type: relation
+        emptyOption: 'Seleccione un supervisor...'
+        select: concat(first_name, ' ', last_name)
+    name:
+        label: 'Idea'
+        span: auto
+        type: text
+        required: true
+    code:
+        label: Código
+        span: auto
+        type: text
+        required: true
+    status:
+        label: Status
+        span: auto
+        type: dropdown
+        options:
+            - Borrador
+            - Lista para revisión
+            - En revisión
+            - Aprobado
+            - Rechazado
+        context:
+            - preview
+            - update
+    situacion:
+        label: Situación actual
+        span: auto
+        type: textarea
+        size: small
+    mejoras:
+        label: Mejoras esperadas
+        span: auto
+        type: textarea
+        size: small
+    objetivo:
+        label: Objetivo de la idea
+        span: auto
+        type: textarea
+        size: small
+    alcance:
+        label: Alcance de la idea
+        span: auto
+        type: textarea
+        size: small
+    creator:
+        label: 'Created by'
+        span: auto
+        type: relation
+        select: concat(first_name, ' ', last_name)
+        readOnly: true
+        context:
+            - preview
+            - update
+    pm:
+        label: 'PM'
+        span: auto
+        type: relation
+        emptyOption: 'Seleccione un PM...'
+        select: concat(first_name, ' ', last_name)
+        context:
+            - preview
+            - update
+    sponsor:
+        label: 'Sponsor'
+        span: auto
+        type: relation
+        emptyOption: 'Seleccione un Sponsor...'
+        select: concat(first_name, ' ', last_name)
+        context:
+            - preview
+            - update
