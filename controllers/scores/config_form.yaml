@@ -1,0 +1,10 @@
+name: Scores
+form: $/gibraltarsf/pmo/models/score/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Score
+defaultRedirect: gibraltarsf/pmo/scores
+create:
+    redirect: 'gibraltarsf/pmo/scores/update/:id'
+    redirectClose: gibraltarsf/pmo/scores
+update:
+    redirect: gibraltarsf/pmo/scores
+    redirectClose: gibraltarsf/pmo/scores

@@ -1,0 +1,19 @@
+fields:
+    name:
+        label: Puntuación
+        span: auto
+        type: text
+    value:
+        label: Valor
+        span: auto
+        type: number
+    icon:
+        label: 'Ícono'
+        span: auto
+        type: 'iconpicker'
+        default: 'far icon-address-book'
+        libraries: ~/modules/backend/formwidgets/iconpicker/meta/libraries.yaml        
+    color:
+        label: Color
+        span: auto
+        type: colorpicker
