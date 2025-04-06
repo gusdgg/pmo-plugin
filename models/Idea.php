@@ -52,5 +52,24 @@ class Idea extends Model
         $this->status = 'Borrador';
     }
 
+    public $belongsToMany = [
+        'valueweights' => [
+            'Gibraltarsf\Pmo\Models\Valcriteria',
+            'table'    => 'gibraltarsf_pmo_idea_value',
+            'key'      => 'idea_id',
+            'otherKey' => 'valcriteria_id',
+            'pivot' => ['score_id'],
+            'timestamps' => true
+        ],
+        'riskweights' => [
+            'Gibraltarsf\Pmo\Models\Riscriteria',
+            'table'    => 'gibraltarsf_pmo_idea_risk',
+            'key'      => 'idea_id',
+            'otherKey' => 'riscriteria_id',
+            'pivot' => ['score_id'],
+            'timestamps' => true
+        ]
+    ];
+    
 
 }

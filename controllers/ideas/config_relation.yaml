@@ -1,0 +1,46 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+
+valueweights:
+    label: Criterios de valoración
+    readOnly: false
+    view:
+        list: ~/plugins/gibraltarsf/pmo/models/valcriteria/columns.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/valcriteria/fields.yaml
+        showSearch: true
+        toolbarButtons:
+        defaultSort:
+            column: name
+            direction: asc
+        recordsPerPage: 15
+        readOnly: false
+        #scope: isEnabled
+    manage:
+        title: Criterios de valoración disponibles
+        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/valcriteria/fields.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/valcriteria/columns.yaml
+        #scope: isEnabled
+#    pivot:
+#        form: ~/plugins/gibraltarsf/importaciones/models/period/periodSupplierFields.yaml
+riskweights:
+    label: Criterios de riesgo
+    readOnly: false
+    view:
+        list: ~/plugins/gibraltarsf/pmo/models/riscriteria/columns.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/riscriteria/fields.yaml
+        showSearch: true
+        toolbarButtons: 
+        defaultSort:
+            column: name
+            direction: asc
+        recordsPerPage: 15
+        readOnly: false
+        #scope: isEnabled
+    manage:
+        title: Criterios de riesgo disponibles
+        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/riscriteria/fields.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/riscriteria/columns.yaml         

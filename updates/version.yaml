@@ -66,3 +66,9 @@
 1.0.23:
     - 'Riscriterias Seeder'
     - seeder1023.php
+1.0.24:
+    - 'Created table gibraltarsf_pmo_idea_value'
+    - builder_table_create_gibraltarsf_pmo_idea_value.php
+1.0.25:
+    - 'Created table gibraltarsf_pmo_idea_risk'
+    - builder_table_create_gibraltarsf_pmo_idea_risk.php

@@ -90,3 +90,15 @@ fields:
         context:
             - preview
             - update
+tabs:
+    fields:
+        valueweights:
+            span: full
+            type: partial
+            tab: Criterios de valoración    
+            path: $/gibraltarsf/pmo/controllers/ideas/_valueweights.htm
+        riskweights:
+            span: full
+            type: partial
+            tab: Criterios de riesgo
+            path: $/gibraltarsf/pmo/controllers/ideas/_riskweights.htm
