@@ -1,0 +1,18 @@
+columns:
+    name:
+        label: 'Criterio del riesgo'
+        type: text
+        searchable: true
+        sortable: true
+    weight:
+        label: Peso
+        type: text
+        sortable: true
+    created_at:
+        label: 'Creado el'
+        type: datetime
+        sortable: true
+    updated_at:
+        label: 'Actualizado el'
+        type: datetime
+        sortable: true

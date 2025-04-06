@@ -1,0 +1,10 @@
+name: Riscriterias
+form: $/gibraltarsf/pmo/models/riscriteria/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Riscriteria
+defaultRedirect: gibraltarsf/pmo/riscriterias
+create:
+    redirect: 'gibraltarsf/pmo/riscriterias/update/:id'
+    redirectClose: gibraltarsf/pmo/riscriterias
+update:
+    redirect: gibraltarsf/pmo/riscriterias
+    redirectClose: gibraltarsf/pmo/riscriterias

@@ -1,0 +1,10 @@
+name: Valcriterias
+form: $/gibraltarsf/pmo/models/valcriteria/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Valcriteria
+defaultRedirect: gibraltarsf/pmo/valcriterias
+create:
+    redirect: 'gibraltarsf/pmo/valcriterias/update/:id'
+    redirectClose: gibraltarsf/pmo/valcriterias
+update:
+    redirect: gibraltarsf/pmo/valcriterias
+    redirectClose: gibraltarsf/pmo/valcriterias
