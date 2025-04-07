@@ -34,8 +34,18 @@ class Valcriteria extends Model
             'otherKey' => 'idea_id',
             'pivot' => ['score_id'],
             'timestamps' => true
-        ]
+        ],
+        'score_tooltips' => [
+            'Gibraltarsf\Pmo\Models\Score',
+            'table'    => 'gibraltarsf_pmo_criteria_score',
+            'key'      => 'valcriteria_id',
+            'otherKey' => 'score_id',
+            'pivot' => ['tooltip'],
+            'timestamps' => true
+            //'delete' => true
+        ],        
     ];
-     
+
+
 
 }

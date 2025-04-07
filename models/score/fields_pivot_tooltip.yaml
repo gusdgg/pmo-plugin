@@ -1,0 +1,6 @@
+fields:
+    pivot[tooltip]:
+        label: 'Leyenda de ayuda (tooltip)'
+        span: full
+        type: textarea
+        size: small

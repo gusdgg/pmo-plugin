@@ -1,0 +1,14 @@
+columns:
+    name:
+        label: puntuación
+        type: text
+        searchable: true
+        sortable: true
+    value:
+        label: valor
+        type: text
+        sortable: true
+    pivot[tooltip]:
+        label: 'Leyenda de ayuda (tooltip)'
+        type: text
+

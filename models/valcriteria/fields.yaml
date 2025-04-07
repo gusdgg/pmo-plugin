@@ -3,7 +3,19 @@ fields:
         label: 'Criterio de valor'
         span: auto
         type: text
+        required: 1
     weight:
         label: 'Peso en %'
         span: auto
         type: number
+        required: 1
+tabs:
+    fields:
+        score_tooltips:   
+            span: full
+            type: partial
+            tab: Ayudas para la puntuación
+            path: $/gibraltarsf/pmo/controllers/valcriterias/_scores.htm
+            context:
+                - preview
+                - update

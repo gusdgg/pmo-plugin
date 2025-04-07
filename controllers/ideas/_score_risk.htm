@@ -7,8 +7,16 @@ $scores = \Gibraltarsf\Pmo\Models\Score::all();
         <?php foreach ($scores as $score) : ?>
         <? 
         $active = ($record->pivot->score_id == $score->id);
+        $score_tooltip = \Gibraltarsf\Pmo\Models\Riscriteria::find($record->id)->score_tooltips()->where('score_id', $score->id)->first();
         ?>
-            <li data-value="<?= $score->id ?>" class="<?= $active ? 'active' : '' ?>" onclick=" $.request('onChangeRiskScore', {data: {score_id: <?= $score->id ?>, risk_id: <?= $record->id ?>}})"><?= $score->name ?></li>
+            <li data-value="<?= $score->id ?>" 
+            <?php if ($score_tooltip) : ?>
+                data-toggle="tooltip"
+                data-placement="top"
+                data-delay="500"
+                title="<?= $score_tooltip->pivot->tooltip ?>" 
+            <?php endif; ?>                
+             class="<?= $active ? 'active' : '' ?>" onclick=" $.request('onChangeRiskScore', {data: {score_id: <?= $score->id ?>, risk_id: <?= $record->id ?>}})"><?= $score->name ?></li>
         <?php endforeach; ?>
        
     </ul>

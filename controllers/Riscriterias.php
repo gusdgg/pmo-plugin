@@ -5,10 +5,13 @@ use BackendMenu;
 
 class Riscriterias extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController'    ];
+    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController' ,
+    'Backend\Behaviors\RelationController'   ];
+    //, 'Backend\Behaviors\ImportExportController'    ];
     
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
+    public $relationConfig = 'config_relation.yaml';
 
     public $requiredPermissions = [
         'gibraltarsf.pmo.tablas' 

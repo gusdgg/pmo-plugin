@@ -7,3 +7,13 @@ fields:
         label: 'Peso en %'
         span: auto
         type: number
+tabs:
+    fields:
+        score_tooltips:   
+            span: full
+            type: partial
+            tab: Ayudas para la puntuación
+            path: $/gibraltarsf/pmo/controllers/riscriterias/_scores.htm
+            context:
+                - preview
+                - update

@@ -72,3 +72,6 @@
 1.0.25:
     - 'Created table gibraltarsf_pmo_idea_risk'
     - ./builder_table_create_gibraltarsf_pmo_idea_risk.php
+1.0.26:
+    - 'Created table gibraltarsf_pmo_criteria_score'
+    - ./builder_table_create_gibraltarsf_pmo_criteria_score.php

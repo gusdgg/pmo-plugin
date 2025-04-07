@@ -20,7 +20,7 @@ class Score extends Model
      */
     public $rules = [
         'name' => 'required|unique:gibraltarsf_pmo_scores',
-        'value' => 'required|integer|min:0|max:100',
+        'value' => 'required|numeric|min:0|max:100',
     ];
     
 

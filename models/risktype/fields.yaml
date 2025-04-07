@@ -8,6 +8,7 @@ fields:
         label: 'Ícono'
         span: auto
         type: 'iconpicker'
+        default: null
         libraries: ~/modules/backend/formwidgets/iconpicker/meta/libraries.yaml
     color:
         label: Color

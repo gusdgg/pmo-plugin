@@ -11,8 +11,10 @@ columns:
     created_at:
         label: 'Creado el'
         type: datetime
+        format: d-m-Y H:i
         sortable: true
     updated_at:
         label: 'Actualizado el'
         type: datetime
+        format: d-m-Y H:i
         sortable: true

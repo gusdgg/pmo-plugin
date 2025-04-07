@@ -25,4 +25,24 @@ class Riscriteria extends Model
      * @var array Attribute names to encode and decode using JSON.
      */
     public $jsonable = [];
+
+    public $belongsToMany = [
+        'idea' => [
+            'Gibraltarsf\Pmo\Models\Idea',
+            'table'    => 'gibraltarsf_pmo_idea_value',
+            'key'      => 'riscriteria_id',
+            'otherKey' => 'idea_id',
+            'pivot' => ['score_id'],
+            'timestamps' => true
+        ],
+        'score_tooltips' => [
+            'Gibraltarsf\Pmo\Models\Score',
+            'table'    => 'gibraltarsf_pmo_criteria_score',
+            'key'      => 'riscriteria_id',
+            'otherKey' => 'score_id',
+            'pivot' => ['tooltip'],
+            'timestamps' => true
+            //'delete' => true
+        ],        
+    ];    
 }

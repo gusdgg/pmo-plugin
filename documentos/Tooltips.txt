@@ -1,0 +1,32 @@
+¡Claro que sí! Aquí tienes la tabla convertida a texto y traducida al castellano:
+
+Complejidad
+
+BAJA: Los requisitos y el alcance están bien definidos y se espera que sean estables; el proyecto reside dentro de una organización/división.
+MEDIA: Los requisitos y el alcance están bien definidos y se espera poco cambio; pocas organizaciones interfuncionales involucradas.
+ALTA: El proyecto tiene varios elementos móviles que pueden ser difíciles de integrar; varias organizaciones involucradas; los requisitos y el alcance no están bien definidos y es probable que cambien.
+MUY ALTA: El proyecto tiene muchos elementos móviles que serán difíciles de integrar; un número significativo de impactos interfuncionales; los requisitos y el alcance son vagos y pueden ser difíciles de controlar.
+Organizacional
+
+BAJA: La solución requiere poco o ningún cambio organizacional y la organización está preparada y equipada para el cambio.
+MEDIA: La solución requiere algún cambio organizacional, que la organización debería poder manejar.
+ALTA: La solución requiere un cambio organizacional de moderado a grande y la organización no está lista o receptiva.
+MUY ALTA: La solución requerirá un cambio cultural y organizacional significativo para el cual la organización no está preparada.
+Recursos
+
+BAJA: El proyecto no requiere el uso de recursos cuello de botella.
+MEDIA: El proyecto requiere un uso limitado de recursos cuello de botella.
+ALTA: El proyecto requiere un uso moderado de recursos cuello de botella.
+MUY ALTA: El proyecto requiere un uso significativo de recursos cuello de botella.
+Dependencias
+
+BAJA: El proyecto/solución es totalmente independiente de otros proyectos o sistemas.
+MEDIA: El proyecto/solución depende de proyectos que tienen una alta confianza de éxito.
+ALTA: El proyecto/solución depende de proyectos que están teniendo alguna dificultad.
+MUY ALTA: El proyecto/solución depende críticamente de uno o más proyectos que están significativamente desafiados.
+Regulatorio
+
+BAJA: La organización tiene una sólida comprensión de los requisitos regulatorios con alta confianza para entregar con éxito.
+MEDIA: La organización tiene una buena comprensión de los requisitos regulatorios con moderada confianza para entregar con éxito.
+ALTA: La organización tiene una comprensión general de los requisitos regulatorios con cierta confianza para entregar con éxito.
+MUY ALTA: La organización tiene una comprensión mínima de los requisitos regulatorios con baja confianza para entregar con éxito.
