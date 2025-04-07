@@ -116,6 +116,14 @@ tabs:
             context:
                 - preview
                 - update
+        _risk_matrix:
+            span: full
+            type: partial
+            tab: Riesgos
+            path: $/gibraltarsf/pmo/controllers/ideas/_risk_matrix.htm
+            context:
+                - preview
+                - update
         valueweights:   
             span: auto
             type: partial
