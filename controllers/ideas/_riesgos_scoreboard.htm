@@ -1,0 +1,54 @@
+<!-- Scoreboard -->
+
+<div class="scoreboard" style="padding-top: 20px;padding-left: 20px;">
+
+    <div data-control="toolbar">
+        <?
+            $colors = array("#95b753","#e5a91a","#cc3300","#631604","#381e1d");
+            $i = 0;
+        ?>
+
+        <div class="scoreboard-item title-value" data-control="goal-meter" data-value="20">
+            <h4>Abiertos</h4>
+            <p>2</p>
+            <p class="description">20% del total</p>
+        </div>
+
+        <div class="scoreboard-item title-value" data-control="goal-meter" data-value="80">
+            <h4>Cerrados</h4>
+            <p>8</p>
+            <p class="description">80% del total</p>
+        </div>
+        
+        <!--Separador en gris-->
+        <div class="scoreboard-item">
+            <div  style="  border-left: 2px solid #ccc;
+            height:65px;
+            left: 50%;
+            margin-left: -3px;
+            top: 0;"></div>
+        </div>
+    
+
+        <div class="scoreboard-item title-value" data-control="goal-meter" data-value="1">
+            <h4>Alto</h4>
+            <p>1</p>
+            <p class="description">37 posts remain</p>
+        </div>
+
+        <div class="scoreboard-item title-value goal-meter-inverse" data-control="goal-meter" data-value="40">
+            <h4>Medio</h4>
+            <p>4</p>
+            <p class="description">37 posts remain</p>
+        </div>
+        <div class="scoreboard-item title-value goal-meter-inverse" data-control="goal-meter" data-value="50">
+            <h4>Bajo</h4>
+            <p>5</p>
+            <p class="description">37 posts remain</p>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- End Scoreboard -->

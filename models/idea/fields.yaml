@@ -100,6 +100,14 @@ tabs:
                 - preview
                 - update
             tab: Información
+        _riesgos_scoreboard:
+            span: full
+            type: partial
+            tab: Riesgos
+            path: $/gibraltarsf/pmo/controllers/ideas/_riesgos_scoreboard.htm
+            context:
+                - preview
+                - update
         riesgos:
             span: full
             type: partial
