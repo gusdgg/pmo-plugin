@@ -5,42 +5,32 @@
 
 valueweights:
     label: Criterios de valoración
-    readOnly: false
+    readOnly: true
     view:
-        list: ~/plugins/gibraltarsf/pmo/models/valcriteria/columns.yaml
-        form: ~/plugins/gibraltarsf/pmo/models/valcriteria/fields.yaml
-        showSearch: true
+        list: ~/plugins/gibraltarsf/pmo/models/valcriteria/columns_idea.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/valcriteria/fields_idea.yaml
+        showSearch: false
         toolbarButtons:
         defaultSort:
             column: name
             direction: asc
         recordsPerPage: 15
-        readOnly: false
-        #scope: isEnabled
-    manage:
-        title: Criterios de valoración disponibles
-        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
-        form: ~/plugins/gibraltarsf/pmo/models/valcriteria/fields.yaml
-        list: ~/plugins/gibraltarsf/pmo/models/valcriteria/columns.yaml
-        #scope: isEnabled
+        readOnly: true
+        showSetup: false
+
 #    pivot:
 #        form: ~/plugins/gibraltarsf/importaciones/models/period/periodSupplierFields.yaml
 riskweights:
     label: Criterios de riesgo
-    readOnly: false
+    readOnly: true
     view:
-        list: ~/plugins/gibraltarsf/pmo/models/riscriteria/columns.yaml
-        form: ~/plugins/gibraltarsf/pmo/models/riscriteria/fields.yaml
-        showSearch: true
+        list: ~/plugins/gibraltarsf/pmo/models/riscriteria/columns_idea.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/riscriteria/fields_idea.yaml
+        showSearch: false
         toolbarButtons: 
         defaultSort:
             column: name
             direction: asc
         recordsPerPage: 15
         readOnly: false
-        #scope: isEnabled
-    manage:
-        title: Criterios de riesgo disponibles
-        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
-        form: ~/plugins/gibraltarsf/pmo/models/riscriteria/fields.yaml
-        list: ~/plugins/gibraltarsf/pmo/models/riscriteria/columns.yaml         
+        showSetup: false

@@ -30,75 +30,83 @@ fields:
         span: auto
         type: text
         required: true
-    status:
-        label: Status
-        span: auto
-        type: dropdown
-        options:
-            - Borrador
-            - Lista para revisión
-            - En revisión
-            - Aprobado
-            - Rechazado
-        context:
-            - preview
-            - update
-    situacion:
-        label: Situación actual
-        span: auto
-        type: textarea
-        size: small
-    mejoras:
-        label: Mejoras esperadas
-        span: auto
-        type: textarea
-        size: small
-    objetivo:
-        label: Objetivo de la idea
-        span: auto
-        type: textarea
-        size: small
-    alcance:
-        label: Alcance de la idea
-        span: auto
-        type: textarea
-        size: small
-    creator:
-        label: 'Created by'
-        span: auto
-        type: relation
-        select: concat(first_name, ' ', last_name)
-        readOnly: true
-        context:
-            - preview
-            - update
-    pm:
-        label: 'PM'
-        span: auto
-        type: relation
-        emptyOption: 'Seleccione un PM...'
-        select: concat(first_name, ' ', last_name)
-        context:
-            - preview
-            - update
-    sponsor:
-        label: 'Sponsor'
-        span: auto
-        type: relation
-        emptyOption: 'Seleccione un Sponsor...'
-        select: concat(first_name, ' ', last_name)
-        context:
-            - preview
-            - update
 tabs:
     fields:
-        valueweights:
-            span: full
+        status:
+            label: Status
+            span: auto
+            type: dropdown
+            options:
+                - Borrador
+                - Lista para revisión
+                - En revisión
+                - Aprobado
+                - Rechazado
+            context:
+                - preview
+                - update
+            tab: Información
+        situacion:
+            label: Situación actual
+            span: auto
+            type: textarea
+            size: small
+            tab: Información
+        mejoras:
+            label: Mejoras esperadas
+            span: auto
+            type: textarea
+            size: small
+            tab: Información
+        objetivo:
+            label: Objetivo de la idea
+            span: auto
+            type: textarea
+            size: small
+            tab: Información
+        alcance:
+            label: Alcance de la idea
+            span: auto
+            type: textarea
+            size: small
+            tab: Información
+        creator:
+            label: 'Created by'
+            span: auto
+            type: relation
+            select: concat(first_name, ' ', last_name)
+            readOnly: true
+            context:
+                - preview
+                - update
+            tab: Información
+        pm:
+            label: 'PM'
+            span: auto
+            type: relation
+            emptyOption: 'Seleccione un PM...'
+            select: concat(first_name, ' ', last_name)
+            context:
+                - preview
+                - update
+            tab: Información
+        sponsor:
+            label: 'Sponsor'
+            span: auto
+            type: relation
+            emptyOption: 'Seleccione un Sponsor...'
+            select: concat(first_name, ' ', last_name)
+            context:
+                - preview
+                - update
+            tab: Información
+        valueweights:   
+            span: auto
             type: partial
-            tab: Criterios de valoración    
+            tab: Puntuación 
             path: $/gibraltarsf/pmo/controllers/ideas/_valueweights.htm
         riskweights:
-            span: full
+            span: auto
             type: partial
-            tab: Criterios de riesgo
+            tab: Puntuación 
             path: $/gibraltarsf/pmo/controllers/ideas/_riskweights.htm

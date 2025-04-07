@@ -25,4 +25,17 @@ class Valcriteria extends Model
      * @var array Attribute names to encode and decode using JSON.
      */
     public $jsonable = [];
+
+    public $belongsToMany = [
+        'idea' => [
+            'Gibraltarsf\Pmo\Models\Idea',
+            'table'    => 'gibraltarsf_pmo_idea_value',
+            'key'      => 'valcriteria_id',
+            'otherKey' => 'idea_id',
+            'pivot' => ['score_id'],
+            'timestamps' => true
+        ]
+    ];
+     
+
 }

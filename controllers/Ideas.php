@@ -23,4 +23,28 @@ class Ideas extends Controller
         parent::__construct();
         BackendMenu::setContext('Gibraltarsf.Pmo', 'main-menu-pmo', 'side-menu-ideas');
     }
+
+    public function onChangeValScore($idea_id)
+    {
+        $data = post();
+        $value = $data['value_id'];
+        $score = $data['score_id'];
+
+        $ideaDb = $this->formFindModelObject($idea_id);
+        $ideaDb->valueweights()->updateExistingPivot($value, ['score_id' => $score]);
+        $ideaDb->save();
+      
+    }
+
+    public function onChangeRiskScore($idea_id)
+    {
+        $data = post();
+        $risk = $data['risk_id'];
+        $score = $data['score_id'];
+
+        $ideaDb = $this->formFindModelObject($idea_id);
+        $ideaDb->riskweights()->updateExistingPivot($risk, ['score_id' => $score]);
+        $ideaDb->save();
+      
+    }    
 }

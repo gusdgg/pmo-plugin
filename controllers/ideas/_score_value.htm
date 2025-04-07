@@ -1,0 +1,17 @@
+<?
+$scores = \Gibraltarsf\Pmo\Models\Score::all();
+?>
+
+<div data-control="balloon-selector" class="control-balloon-selector">
+    <ul>
+        <?php foreach ($scores as $score) : ?>
+        <? 
+        $active = ($record->pivot->score_id == $score->id);
+        ?>
+            <li data-value="<?= $score->id ?>" class="<?= $active ? 'active' : '' ?>" onclick=" $.request('onChangeValScore', {data: {score_id: <?= $score->id ?>, value_id: <?= $record->id ?>}})"><?= $score->name ?></li>
+        <?php endforeach; ?>
+       
+    </ul>
+
+    <input type="hidden" name="balloonValue" value="1" />
+</div>

@@ -1,0 +1,9 @@
+fields:
+    name:
+        label: 'Criterio de riesgo'
+        span: auto
+        type: text
+    weight:
+        label: 'Peso en %'
+        span: auto
+        type: number
