@@ -8,7 +8,12 @@ $scores = \Gibraltarsf\Pmo\Models\Score::all();
         <? 
         $active = ($record->pivot->score_id == $score->id);
         ?>
-            <li data-value="<?= $score->id ?>" class="<?= $active ? 'active' : '' ?>" onclick=" $.request('onChangeValScore', {data: {score_id: <?= $score->id ?>, value_id: <?= $record->id ?>}})"><?= $score->name ?></li>
+            <li data-value="<?= $score->id ?>" 
+                data-toggle="tooltip"
+    data-placement="top"
+    data-delay="500"
+    title="Tooltip content" 
+                class="<?= $active ? 'active' : '' ?>" onclick=" $.request('onChangeValScore', {data: {score_id: <?= $score->id ?>, value_id: <?= $record->id ?>}})"><?= $score->name ?></li>
         <?php endforeach; ?>
        
     </ul>

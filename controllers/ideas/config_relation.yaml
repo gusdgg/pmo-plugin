@@ -6,11 +6,12 @@
 valueweights:
     label: Criterios de valoración
     readOnly: true
+
     view:
         list: ~/plugins/gibraltarsf/pmo/models/valcriteria/columns_idea.yaml
         form: ~/plugins/gibraltarsf/pmo/models/valcriteria/fields_idea.yaml
         showSearch: false
-        toolbarButtons:
+        #toolbarButtons:
         defaultSort:
             column: name
             direction: asc
