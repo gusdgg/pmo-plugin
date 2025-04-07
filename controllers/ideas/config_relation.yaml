@@ -35,3 +35,28 @@ riskweights:
         recordsPerPage: 15
         readOnly: false
         showSetup: false
+
+riesgos:
+    label: Riesgos
+    readOnly: false
+    view:
+        list: ~/plugins/gibraltarsf/pmo/models/riesgo/columns.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/riesgo/fields.yaml
+        showSearch: true
+        toolbarButtons:   create | delete
+        defaultSort:
+            column: name
+            direction: asc
+        recordsPerPage: 15
+        #scope: isEnabled
+    manage:
+        title: Riesgos disponibles
+        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/riesgo/fields.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/riesgo/columns.yaml
+        showSearch: true
+        #scope: isEnabled
+    #pivot:
+    #    form: ~/plugins/gibraltarsf/pmo/models/riesgo/fields_pivot.yaml
+
+

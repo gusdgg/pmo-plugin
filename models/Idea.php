@@ -3,6 +3,10 @@
 use Model;
 use Backend\Models\User;
 use Gibraltarsf\Pmo\Models\Pilar;
+
+use Gibraltarsf\Pmo\Models\Valcriteria;
+use Gibraltarsf\Pmo\Models\Riscriteria;
+
 use Backend\Facades\BackendAuth;
 
 /**
@@ -45,13 +49,6 @@ class Idea extends Model
         'sponsor' => [User::class, 'key' => 'sponsor_id', 'otherKey' => 'id'],
     ];
 
-    
-    public function beforeCreate()
-    {
-        $this->created_by = BackendAuth::getUser()->id;
-        $this->status = 'Borrador';
-    }
-
     public $belongsToMany = [
         'valueweights' => [
             'Gibraltarsf\Pmo\Models\Valcriteria',
@@ -59,7 +56,8 @@ class Idea extends Model
             'key'      => 'idea_id',
             'otherKey' => 'valcriteria_id',
             'pivot' => ['score_id'],
-            'timestamps' => true
+            'timestamps' => true,
+            'delete' => true
         ],
         'riskweights' => [
             'Gibraltarsf\Pmo\Models\Riscriteria',
@@ -67,9 +65,41 @@ class Idea extends Model
             'key'      => 'idea_id',
             'otherKey' => 'riscriteria_id',
             'pivot' => ['score_id'],
-            'timestamps' => true
+            'timestamps' => true,
+            'delete' => true
         ]
     ];
+
+    public $morphMany = [
+        'riesgos' => ['Gibraltarsf\Pmo\Models\Riesgo', 
+                       'name' => 'riskable']
+    ];
+
+    
+    public function beforeCreate()
+    {
+        $this->created_by = BackendAuth::getUser()->id;
+        $this->status = 'Borrador';
+    }
+
+
+    /**
+     * Insert ther records for the valaues and risk to criterias
+     */
+    public function afterCreate()
+    {
+    
+        $idea_id = $this->id;
+        $values = Valcriteria::all();
+        $risks = Riscriteria::all();
+
+        $this->valueweights()->sync($values);
+        $this->riskweights()->sync($risks);
+
+    }
+
+
+
     
 
 }

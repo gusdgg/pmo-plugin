@@ -22,8 +22,8 @@ class BuilderTableCreateGibraltarsfPmoRiesgos extends Migration
         $table->string('priority', 60)->nullable();
         $table->string('severity', 60)->nullable();
         $table->string('likelihood', 60)->nullable();
-        $table->string('resource_type')->nullable();
-        $table->integer('resource_id')->nullable();
+        $table->string('riskable_type')->nullable();
+        $table->integer('riskable_id')->nullable();
         $table->timestamp('created_at')->nullable();
         $table->timestamp('updated_at')->nullable();
         
@@ -35,8 +35,8 @@ class BuilderTableCreateGibraltarsfPmoRiesgos extends Migration
         $table->index('priority');
         $table->index('severity');
         $table->index('likelihood');
-        $table->index('resource_type');
-        $table->index('resource_id');
+        $table->index('riskable_type');
+        $table->index('riskable_id');
     });
 }
 

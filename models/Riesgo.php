@@ -21,8 +21,14 @@ class Riesgo extends Model
      * @var array Validation rules
      */
     public $rules = [
+        'name' => 'required',
     ];
-    
+
+    public $customMessages = [
+        'required' => 'Debe completar el atributo :attribute.',
+    ];
+
+        
     /**
      * @var array Attribute names to encode and decode using JSON.
      */

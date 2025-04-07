@@ -1,21 +1,20 @@
 columns:
-    name:
-        label: Riesgo
-        type: text
     status:
         label: Estado
         type: text
+    name:
+        label: Riesgo
+        type: text
     risktype:
         label: Tipo
+        relation: risktype
+        select: name
         type: text
     description:
         label: Descripción
         type: text
     response_plan:
         label: Plan de respuesta
-        type: text
-    notes:
-        label: Notas
         type: text
     response:
         label: Respuesta al riesgo

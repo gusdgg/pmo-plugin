@@ -1,21 +1,24 @@
 fields:
     name:
         label: Riesgo
-        span: full
+        span: auto
         type: text
+        required: true
     risktype:
         label: Tipo
         span: auto
         type: relation
         select: name
+        emptyOption: 'Seleccione un tipo de riesgo...'
     status:
         label: Estado
         span: auto
         type: dropdown
         default: Abierto
+        emptyOption: 'Seleccione un estado...'
         options:
-            - Abierto
-            - Cerrado
+            Abierto: Abierto
+            Cerrado: Cerrado
     description:
         label: Descripción
         span: auto
@@ -29,11 +32,12 @@ fields:
         label: Respuesta al riesgo
         span: auto
         type: dropdown
+        emptyOption: 'Seleccione una respuesta...'
         options:
-            - Aceptar
-            - Mitigar
-            - Transferir
-            - Evitar
+            Aceptar: Aceptar
+            Mitigar: Mitigar
+            Transferir: Transferir
+            Evitar: Evitar
     response_plan:
         label: Plan de respuesta
         span: auto
@@ -43,37 +47,44 @@ fields:
         label: Propietario
         span: auto
         type: relation
+        emptyOption: 'Seleccione un propietario...'
         select: concat(first_name, ' ', last_name)
     priority:
         label: Prioridad
         span: storm
         cssClass: col-sm-4
         type: dropdown
+        emptyOption: 'Seleccione una prioridad...'
+        required: true
         options:
-            - Alta
-            - Media
-            - Baja
+            Alta: Alta
+            Media: Media
+            Baja: Baja
     severity:
         label: Severidad
         span: storm
         cssClass: col-sm-4
         type: dropdown
+        emptyOption: 'Seleccione una severidad...'
+        required: true
         options:
-            - Muy baja
-            - Baja
-            - Media
-            - Alta
-            - Muy alta
+            Muy baja: Muy baja
+            Baja: Baja
+            Media: Media
+            Alta: Alta
+            Muy alta: Muy alta
         
     likelihood:
         label: Probabilidad
         span: storm
         cssClass: col-sm-4
         type: dropdown
+        emptyOption: 'Seleccione una probabilidad...'
+        required: true
         options:
-            - Muy baja
-            - Baja
-            - Media
-            - Alta
-            - Muy alta
+            Muy baja: Muy baja
+            Baja: Baja
+            Media: Media
+            Alta: Alta
+            Muy alta: Muy alta
 

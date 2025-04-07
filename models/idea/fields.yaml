@@ -100,13 +100,27 @@ tabs:
                 - preview
                 - update
             tab: Información
+        riesgos:
+            span: full
+            type: partial
+            tab: Riesgos
+            path: $/gibraltarsf/pmo/controllers/ideas/_riesgos.htm
+            context:
+                - preview
+                - update
         valueweights:   
             span: auto
             type: partial
             tab: Puntuación 
             path: $/gibraltarsf/pmo/controllers/ideas/_valueweights.htm
+            context:
+                - preview
+                - update
         riskweights:
             span: auto
             type: partial
             tab: Puntuación 
             path: $/gibraltarsf/pmo/controllers/ideas/_riskweights.htm
+            context:
+                - preview
+                - update
