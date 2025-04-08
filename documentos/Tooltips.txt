@@ -30,3 +30,15 @@ BAJA: La organización tiene una sólida comprensión de los requisitos regulato
 MEDIA: La organización tiene una buena comprensión de los requisitos regulatorios con moderada confianza para entregar con éxito.
 ALTA: La organización tiene una comprensión general de los requisitos regulatorios con cierta confianza para entregar con éxito.
 MUY ALTA: La organización tiene una comprensión mínima de los requisitos regulatorios con baja confianza para entregar con éxito.
+
+
+
+
+¡Aquí tienes la tabla convertida a texto y traducida al castellano!
+
+OBJETIVO ESTRATÉGICO # 1
+
+NADA: Poca o ninguna contribución para lograr este objetivo estratégico.
+BAJA: Contribución menor para lograr este objetivo estratégico.
+MEDIA: Contribución moderada para lograr este objetivo estratégico.
+ALTA: Contribución significativa para lograr este objetivo estratégico.
