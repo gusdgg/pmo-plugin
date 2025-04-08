@@ -15,7 +15,7 @@ class BuilderTableCreateGibraltarsfPmoCriteriaScore extends Migration
         $table->integer('valcriteria_id')->nullable();
         $table->integer('riscriteria_id')->nullable();
         $table->integer('score_id')->nullable();
-        $table->string('tooltip')->nullable();
+        $table->text('tooltip',512)->nullable();
         $table->timestamp('created_at')->nullable();
         $table->timestamp('updated_at')->nullable();
         
