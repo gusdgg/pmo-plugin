@@ -37,11 +37,11 @@ tabs:
             span: auto
             type: dropdown
             options:
-                - Borrador
-                - Lista para revisión
-                - En revisión
-                - Aprobado
-                - Rechazado
+                Borrador : Borrador
+                Lista para revisión : Lista para revisión
+                En revisión : En revisión
+                Aprobado : Aprobado
+                Rechazado : Rechazado
             context:
                 - preview
                 - update
