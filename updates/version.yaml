@@ -50,7 +50,7 @@
     - seeder1017.php
 1.0.18:
     - 'Created table gibraltarsf_pmo_riesgos'
-    - ./builder_table_create_gibraltarsf_pmo_riesgos.php
+    - builder_table_create_gibraltarsf_pmo_riesgos.php
 1.0.19:
     - 'Created table gibraltarsf_pmo_ideas'
     - builder_table_create_gibraltarsf_pmo_ideas.php
