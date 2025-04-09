@@ -1,8 +1,9 @@
 <?
 $scores = \Gibraltarsf\Pmo\Models\Score::all();
+\Log::info('vars: ' . $formContext);
 ?>
 
-<div data-control="balloon-selector" class="control-balloon-selector">
+<div <?= ($formContext !== 'preview' ? "data-control='balloon-selector'" : "") ?> class="control-balloon-selector">
     <ul>
         <?php foreach ($scores as $score) : ?>
         <? 

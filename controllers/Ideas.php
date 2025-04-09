@@ -24,6 +24,15 @@ class Ideas extends Controller
         BackendMenu::setContext('Gibraltarsf.Pmo', 'main-menu-pmo', 'side-menu-ideas');
     }
 
+
+
+    public function preview_onChangeValScore($id)
+    {
+        //en preview es read only y no hay modificaciones
+        return;
+    }
+
+
     public function onChangeValScore($idea_id)
     {
         $data = post();
@@ -38,6 +47,14 @@ class Ideas extends Controller
         return array("#Form-field-Idea-_value_score-group" => $view);
       
     }
+
+    
+    public function preview_onChangeRiskScore($id)
+    {
+        //en preview es read only y no hay modificaciones
+        return;
+    }
+
 
     public function onChangeRiskScore($idea_id)
     {
