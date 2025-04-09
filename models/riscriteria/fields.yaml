@@ -12,7 +12,7 @@ tabs:
         score_tooltips:   
             span: full
             type: partial
-            tab: Ayudas para la puntuación
+            tab: Ayudas para puntuación
             path: $/gibraltarsf/pmo/controllers/riscriterias/_scores.htm
             context:
                 - preview

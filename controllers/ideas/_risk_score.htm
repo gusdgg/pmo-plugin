@@ -1,3 +1,15 @@
-<div name="risk_score">
-    Puntuación del riesgo: <?= $model->risk_score ?>
+<!-- Scoreboard -->
+
+<div class="scoreboard" style="padding-top: 20px;padding-left: 20px;">
+    <div data-control="toolbar">
+        <div class="scoreboard-item title-value goal-meter-inverse" data-control="goal-meter" data-value="<?= $model->risk_score ?>">
+            <h4>Riesgo</h4>
+            <p><?= $model->risk_score ?>%</p>
+            <p class="description">1° En la cartera</p>
+        </div>
+    </div>
 </div>
+
+<!-- End Scoreboard -->
+
+
