@@ -100,6 +100,14 @@ tabs:
                 - preview
                 - update
             tab: Información
+        _novedades:
+            label: 'Novedades'
+            span: auto
+            type: text
+            tab: Novedades 
+            context:
+                - preview
+                - update            
         _riesgos_scoreboard:
             span: full
             type: partial
@@ -137,6 +145,22 @@ tabs:
             type: partial
             tab: Puntuación 
             path: $/gibraltarsf/pmo/controllers/ideas/_riskweights.htm
+            context:
+                - preview
+                - update
+        _nada:
+            label: 'Nada'
+            span: auto
+            type: text
+            tab: Recursos 
+            context:
+                - preview
+                - update
+        _nada2:
+            label: 'Nada'
+            span: auto
+            type: text
+            tab: Finanzas 
             context:
                 - preview
                 - update
