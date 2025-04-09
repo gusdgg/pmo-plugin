@@ -132,6 +132,22 @@ tabs:
             context:
                 - preview
                 - update
+        _value_score:
+            span: auto
+            type: partial
+            tab: Puntuación 
+            path: $/gibraltarsf/pmo/controllers/ideas/_value_score.htm
+            context:
+                - preview
+                - update
+        _risk_score:
+            span: auto
+            type: partial
+            tab: Puntuación 
+            path: $/gibraltarsf/pmo/controllers/ideas/_risk_score.htm
+            context:
+                - preview
+                - update
         valueweights:   
             span: auto
             type: partial

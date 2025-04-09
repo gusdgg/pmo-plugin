@@ -33,6 +33,9 @@ class Ideas extends Controller
         $ideaDb = $this->formFindModelObject($idea_id);
         $ideaDb->valueweights()->updateExistingPivot($value, ['score_id' => $score]);
         $ideaDb->save();
+
+        $view = $this->makePartial('value_score', ['model' => $ideaDb]);
+        return array("#Form-field-Idea-_value_score-group" => $view);
       
     }
 
@@ -45,6 +48,9 @@ class Ideas extends Controller
         $ideaDb = $this->formFindModelObject($idea_id);
         $ideaDb->riskweights()->updateExistingPivot($risk, ['score_id' => $score]);
         $ideaDb->save();
+
+        $view = $this->makePartial('risk_score', ['model' => $ideaDb]);
+        return array("#Form-field-Idea-_risk_score-group" => $view);
       
     }    
 }

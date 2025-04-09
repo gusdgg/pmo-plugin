@@ -6,7 +6,7 @@ use Gibraltarsf\Pmo\Models\Pilar;
 
 use Gibraltarsf\Pmo\Models\Valcriteria;
 use Gibraltarsf\Pmo\Models\Riscriteria;
-
+use DB;
 use Backend\Facades\BackendAuth;
 
 /**
@@ -98,8 +98,43 @@ class Idea extends Model
 
     }
 
+    public function getRiskScoreAttribute()
+    {
+        // calculo el máximo posible de la suma de los pesos de los criterios de valor
 
+        $max_risk_score = Riscriteria::sum('weight') * Score::max('value');
 
-    
+        $risk_score = Idea::whereRaw('gibraltarsf_pmo_ideas.id = ?', [$this->id])
+        ->join('gibraltarsf_pmo_idea_risk', 'gibraltarsf_pmo_ideas.id', '=', 'gibraltarsf_pmo_idea_risk.idea_id')
+        ->join('gibraltarsf_pmo_riscriterias', 'gibraltarsf_pmo_idea_risk.riscriteria_id', '=', 'gibraltarsf_pmo_riscriterias.id')
+        ->join('gibraltarsf_pmo_scores', 'gibraltarsf_pmo_idea_risk.score_id', '=', 'gibraltarsf_pmo_scores.id')
+        ->sum(DB::raw('gibraltarsf_pmo_riscriterias.weight * gibraltarsf_pmo_scores.value') );
 
+        return round($risk_score / ($max_risk_score ? $max_risk_score : 1) * 100, 2);
+    }
+
+    public function getValueScoreAttribute()
+    {
+        
+        $max_value_score = Valcriteria::sum('weight') * Score::max('value');
+
+        $value_score = Idea::whereRaw('gibraltarsf_pmo_ideas.id = ?', [$this->id])
+        ->join('gibraltarsf_pmo_idea_value', 'gibraltarsf_pmo_ideas.id', '=', 'gibraltarsf_pmo_idea_value.idea_id')
+        ->join('gibraltarsf_pmo_valcriterias', 'gibraltarsf_pmo_idea_value.valcriteria_id', '=', 'gibraltarsf_pmo_valcriterias.id')
+        ->join('gibraltarsf_pmo_scores', 'gibraltarsf_pmo_idea_value.score_id', '=', 'gibraltarsf_pmo_scores.id')
+        ->sum(DB::raw('gibraltarsf_pmo_valcriterias.weight * gibraltarsf_pmo_scores.value') );
+
+        return round($value_score / ($max_value_score ? $max_value_score : 1) * 100, 2);
+    }
 }
+
+/*
+
+SELECT sum(valor.weight * score.value) as puntuacion
+FROM `gibraltarsf_pmo_ideas` ideas
+left join gibraltarsf_pmo_idea_value iv on iv.idea_id = ideas.id
+join gibraltarsf_pmo_valcriterias valor on valor.id = iv.valcriteria_id
+join gibraltarsf_pmo_scores score on iv.score_id = score.id
+WHERE ideas.id = 1;
+
+*/
