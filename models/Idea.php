@@ -126,6 +126,80 @@ class Idea extends Model
 
         return round($value_score / ($max_value_score ? $max_value_score : 1) * 100, 2);
     }
+
+    public function getValuePositionAttribute()
+    {
+     /*
+        select id, rn
+        from (
+        SELECT 
+        (@rn:=CASE WHEN @prev_id <> ideas.id THEN 1 ELSE @rn+1 END) AS rn, @prev_id := ideas.id as prev_id,
+        ideas.id, sum(valor.weight * score.value) as puntuacion
+        FROM (SELECT @rn := 0) r, `gibraltarsf_pmo_ideas` ideas
+        left join gibraltarsf_pmo_idea_value iv on iv.idea_id = ideas.id
+        join gibraltarsf_pmo_valcriterias valor on valor.id = iv.valcriteria_id
+        join gibraltarsf_pmo_scores score on iv.score_id = score.id
+        group by ideas.id
+        order by sum(valor.weight * score.value) desc) ranking
+        where id =;
+     
+     */
+     /*
+         SELECT  ideas.id, sum(valor.weight * score.value) as puntuacion
+        FROM `gibraltarsf_pmo_ideas` ideas
+        left join gibraltarsf_pmo_idea_value iv on iv.idea_id = ideas.id
+        join gibraltarsf_pmo_valcriterias valor on valor.id = iv.valcriteria_id
+        join gibraltarsf_pmo_scores score on iv.score_id = score.id
+        group by ideas.id
+        order by sum(valor.weight * score.value) desc;
+    */
+     
+     
+        $ranking = Idea::select(DB::raw('gibraltarsf_pmo_ideas.id, sum(gibraltarsf_pmo_valcriterias.weight * gibraltarsf_pmo_scores.value) as puntuacion'))
+        ->join('gibraltarsf_pmo_idea_value', 'gibraltarsf_pmo_ideas.id', '=', 'gibraltarsf_pmo_idea_value.idea_id')
+        ->join('gibraltarsf_pmo_valcriterias', 'gibraltarsf_pmo_idea_value.valcriteria_id', '=', 'gibraltarsf_pmo_valcriterias.id')
+        ->join('gibraltarsf_pmo_scores', 'gibraltarsf_pmo_idea_value.score_id', '=', 'gibraltarsf_pmo_scores.id')
+        ->groupBy('gibraltarsf_pmo_ideas.id')
+        ->orderByRaw('sum(gibraltarsf_pmo_valcriterias.weight * gibraltarsf_pmo_scores.value) desc')
+        ->get();
+
+        $position = 0;
+        
+        if ($ranking) {
+            foreach ($ranking as $rank) {
+                $position++;
+                if ($rank->id == $this->id) {
+                    break;
+                }
+            }
+        }
+        return $position;
+    }
+    public function getRiskPositionAttribute()
+    {
+    
+     
+        $ranking = Idea::select(DB::raw('gibraltarsf_pmo_ideas.id, sum(gibraltarsf_pmo_riscriterias.weight * gibraltarsf_pmo_scores.value) as puntuacion'))
+        ->join('gibraltarsf_pmo_idea_risk', 'gibraltarsf_pmo_ideas.id', '=', 'gibraltarsf_pmo_idea_risk.idea_id')
+        ->join('gibraltarsf_pmo_riscriterias', 'gibraltarsf_pmo_idea_risk.riscriteria_id', '=', 'gibraltarsf_pmo_riscriterias.id')
+        ->join('gibraltarsf_pmo_scores', 'gibraltarsf_pmo_idea_risk.score_id', '=', 'gibraltarsf_pmo_scores.id')
+        ->groupBy('gibraltarsf_pmo_ideas.id')
+        ->orderByRaw('sum(gibraltarsf_pmo_riscriterias.weight * gibraltarsf_pmo_scores.value) desc')
+        ->get();
+
+        $position = 0;
+        
+        if ($ranking) {
+            foreach ($ranking as $rank) {
+                $position++;
+                if ($rank->id == $this->id) {
+                    break;
+                }
+            }
+        }
+        return $position;
+    }
+
 }
 
 /*
