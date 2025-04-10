@@ -22,6 +22,10 @@ class Ideas extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Gibraltarsf.Pmo', 'main-menu-pmo', 'side-menu-ideas');
+
+        //$this->addCss('/plugins/gibraltarsf/pmo/assets/css/tabler.min.css');
+        $this->addCss('/plugins/gibraltarsf/pmo/assets/css/tabler.css');
+        $this->addJs('/plugins/gibraltarsf/pmo/assets/vendor/chartjs/chart.umd.js');
     }
 
 

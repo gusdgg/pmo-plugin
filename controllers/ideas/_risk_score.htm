@@ -1,15 +1,19 @@
 <!-- Scoreboard -->
 
-<div class="scoreboard" style="padding-top: 20px;padding-left: 20px;">
-    <div data-control="toolbar">
-        <div class="scoreboard-item title-value goal-meter-inverse" data-control="goal-meter" data-value="<?= $model->risk_score ?>">
-            <h4>Riesgo</h4>
-            <p><?= $model->risk_score ?>%</p>
-            <p class="description"><?= $model->risk_position ?>° En la cartera</p>
+<div class="card"style="background-color: #fefefe;">
+    <div class="card-body" >
+
+        <div class="scoreboard" style="padding-top: 20px;padding-left: 20px;">
+            <div data-control="toolbar">
+                <div class="scoreboard-item title-value goal-meter-inverse" data-control="goal-meter" data-value="<?= $model->risk_score ?>">
+                    <h4>Riesgo</h4>
+                    <p><?= $model->risk_score ?>%</p>
+                    <p class="description"><?= $model->risk_position ?>° En la cartera</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
-
 <!-- End Scoreboard -->
 
 
