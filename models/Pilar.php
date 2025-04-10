@@ -49,4 +49,8 @@ class Pilar extends Model
             
     }
     */
+
+    public $hasMany = [
+        'personas' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'pilar_id', 'otherKey' => 'id'],
+    ];
 }

@@ -1,0 +1,41 @@
+fields:
+    first_name:
+        label: 'Nombres'
+        span: auto
+        type: text
+        required: true
+    last_name:
+        label: 'Apellidos'
+        span: auto
+        type: text
+        required: true
+    pilar:
+        label: 'Pilar'
+        span: auto
+        type: relation
+        emptyOption: 'Seleccionar...'
+        select: name
+    inmediato:
+        label: 'Supervisor inmediato'
+        span: auto
+        type: relation
+        emptyOption: 'Seleccionar...'
+        select: concat(first_name, ' ', last_name)
+    supervisor:
+        label: 'Supervisor del supervisor inmediato'
+        span: auto
+        type: relation
+        emptyOption: 'Seleccionar...'
+        select: concat(first_name, ' ', last_name)
+    gerente:
+        label: 'Gerente'
+        span: auto
+        type: relation
+        emptyOption: 'Seleccionar...'
+        select: concat(first_name, ' ', last_name)
+    rol:
+        label: 'Rol'
+        span: auto
+        type: relation
+        emptyOption: 'Seleccionar...'
+        select: name

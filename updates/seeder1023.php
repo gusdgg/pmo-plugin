@@ -1,6 +1,6 @@
 <?php namespace Gibraltarsf\Pmo\Updates;
 
-use Seeder;
+use Winter\Storm\Database\Updates\Seeder;
 use Gibraltarsf\Pmo\Models\Riscriteria;
 use Carbon\Carbon;
 

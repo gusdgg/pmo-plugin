@@ -13,3 +13,12 @@ fields:
         label: Color
         span: auto
         type: colorpicker
+tabs:
+    fields:
+        personas:
+            tab: Personas
+            label: Personas
+            span: full
+            type: partial
+            path: $/gibraltarsf/pmo/controllers/pilares/_persons.htm
+            

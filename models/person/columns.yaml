@@ -1,0 +1,35 @@
+columns:
+    first_name:
+        label: Nombres
+        type: text
+    last_name:
+        label: Apellidos
+        type: text
+    inmediato:
+        label: Sup.Inmediato
+        relation: inmediato
+        select: concat(first_name, ' ', last_name)
+    supervisor:
+        label: Sup.Supervisor
+        relation: supervisor
+        select: concat(first_name, ' ', last_name)
+    gerente:
+        label: Gerente
+        relation: gerente
+        select: concat(first_name, ' ', last_name)
+    pilar:
+        label: Pilar
+        relation: pilar
+        select: name
+    rol:
+        label: Rol
+        relation: rol
+        select: name
+    created_at:
+        label: Creado el
+        type: datetime
+        format: d-m-Y H:i
+    updated_at:
+        label: Actualizado el
+        type: datetime
+        format: d-m-Y H:i

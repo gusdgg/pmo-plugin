@@ -1,0 +1,10 @@
+name: Personas
+form: $/gibraltarsf/pmo/models/person/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Person
+defaultRedirect: gibraltarsf/pmo/personas
+create:
+    redirect: 'gibraltarsf/pmo/personas/update/:id'
+    redirectClose: gibraltarsf/pmo/personas
+update:
+    redirect: gibraltarsf/pmo/personas
+    redirectClose: gibraltarsf/pmo/personas

@@ -14,11 +14,11 @@ columns:
         relation: requestor
         select: concat(first_name, ' ', last_name)
     pilar:
-        label: pilar_id
+        label: pilar
         relation: pilar
         select: name
     supervisor:
-        label: supervisor_id
+        label: supervisor
         relation: supervisor
         select: concat(first_name, ' ', last_name)
 #    situacion:

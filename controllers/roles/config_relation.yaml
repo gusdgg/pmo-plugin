@@ -1,0 +1,27 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+
+personas:
+    label: Personas
+    readOnly: false
+    view:
+        list: ~/plugins/gibraltarsf/pmo/models/person/columns.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/person/fields.yaml
+        showSearch: true
+        toolbarButtons:   add | remove
+        defaultSort:
+            column: last_name
+            direction: asc
+        recordsPerPage: 15
+        #scope: isEnabled
+    manage:
+        title: Personas disponibles
+        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/person/fields.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/person/columns.yaml
+        showSearch: true
+        #scope: isEnabled
+    #pivot:
+    #    form: ~/plugins/gibraltarsf/pmo/models/riesgo/fields_pivot.yaml

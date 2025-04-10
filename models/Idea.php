@@ -41,12 +41,12 @@ class Idea extends Model
     public $jsonable = [];
 
     public $belongsTo = [
-        'creator' => [User::class, 'key' => 'created_by', 'otherKey' => 'id'],
-        'requestor' => [User::class, 'key' => 'requestor_id', 'otherKey' => 'id'],
-        'pilar' => [Pilar::class, 'key' => 'pilar_id', 'otherKey' => 'id'],
-        'supervisor' => [User::class, 'key' => 'supervisor_id', 'otherKey' => 'id'],
-        'pm' => [User::class, 'key' => 'pm_id', 'otherKey' => 'id'],
-        'sponsor' => [User::class, 'key' => 'sponsor_id', 'otherKey' => 'id'],
+        'creator' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'created_by', 'otherKey' => 'id'],
+        'requestor' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'requestor_id', 'otherKey' => 'id'],
+        'pilar' => [\Gibraltarsf\Pmo\Models\Pilar::class, 'key' => 'pilar_id', 'otherKey' => 'id'],
+        'supervisor' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'supervisor_id', 'otherKey' => 'id'],
+        'pm' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'pm_id', 'otherKey' => 'id'],
+        'sponsor' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'sponsor_id', 'otherKey' => 'id'],
     ];
 
     public $belongsToMany = [
@@ -78,7 +78,14 @@ class Idea extends Model
     
     public function beforeCreate()
     {
-        $this->created_by = BackendAuth::getUser()->id;
+        $user = BackendAuth::getUser();
+        if ($user->person) {
+            $this->created_by = $user->person->id;
+        }
+        else {
+            $this->created_by = null;
+        }
+        
         $this->status = 'Borrador';
     }
 

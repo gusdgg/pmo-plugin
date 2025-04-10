@@ -31,4 +31,8 @@ class Role extends Model
      * @var array Attribute names to encode and decode using JSON.
      */
     public $jsonable = [];
+
+    public $hasMany = [
+        'personas' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'role_id', 'otherKey' => 'id'],
+    ];
 }

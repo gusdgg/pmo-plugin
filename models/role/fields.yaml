@@ -4,3 +4,11 @@ fields:
         span: auto
         type: text
         required: 1
+tabs:
+    fields:
+        personas:
+            tab: Personas
+            label: Personas
+            span: full
+            type: partial
+            path: $/gibraltarsf/pmo/controllers/roles/_persons.htm
