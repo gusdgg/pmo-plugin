@@ -48,4 +48,14 @@ class Person extends Model
         'supervisor' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'supervisor_id', 'otherKey' => 'id'],
         'gerente' => [\Gibraltarsf\Pmo\Models\Person::class, 'key' => 'gerente_id', 'otherKey' => 'id'],
     ];
+
+    public function getFullNameAttribute()
+    {
+        return (trim($this->first_name) . ' ' . trim($this->last_name));
+    }
+
+    public function getPersonOptions()
+    {
+        return self::all()->pluck('full_name', 'id')->toArray();
+    }
 }

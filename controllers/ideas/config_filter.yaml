@@ -1,0 +1,51 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    solicitante:
+        label: Solicitante
+        modelClass: Gibraltarsf\Pmo\Models\Person
+        conditions: created_by in (:filtered)
+        options: getPersonOptions
+
+    pilar:
+        label: Pilar
+        modelClass: Gibraltarsf\Pmo\Models\Pilar
+        conditions: pilar_id in (:filtered)
+        nameFrom: name
+
+    supervisor:
+        label: Supervisor
+        modelClass: Gibraltarsf\Pmo\Models\Person
+        conditions: supervisor_id in (:filtered)
+        options: getPersonOptions
+
+    pm:
+        label: PM
+        modelClass: Gibraltarsf\Pmo\Models\Person
+        conditions: pm_id in (:filtered)
+        options: getPersonOptions
+
+    sponsor:
+        label: Sponsor
+        modelClass: Gibraltarsf\Pmo\Models\Person
+        conditions: sponsor_id in (:filtered)
+        options: getPersonOptions
+
+    status:
+        label: Estado
+        type: group
+        conditions: status in (:filtered)
+        options:
+                Borrador : Borrador
+                Lista para revisión : Lista para revisión
+                En revisión : En revisión
+                Aprobado : Aprobado
+                Rechazado : Rechazado
+
+    created_at:
+        label: Ingresada
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'

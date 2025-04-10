@@ -10,3 +10,4 @@ toolbar:
     search:
         prompt: 'backend::lang.list.search_prompt'
 recordUrl: 'gibraltarsf/pmo/ideas/update/:id'
+filter: $/gibraltarsf/pmo/controllers/ideas/config_filter.yaml
