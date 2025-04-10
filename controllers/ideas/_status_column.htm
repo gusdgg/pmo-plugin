@@ -1,0 +1,29 @@
+<?php
+  
+    switch ($value) {
+        case 'Borrador':
+            $status_class = 'badge-info';
+            $status_icon = 'icon-pencil';
+            break;
+        case 'Lista para revisión':
+            $status_class = 'badge-info';
+            $status_icon = 'icon-exclamation';
+            break;
+        case 'En revisión':
+            $status_class = 'badge-warning';
+            $status_icon = 'icon-pencil';
+            break;
+        case 'Aprobado':
+            $status_class = 'badge-success';
+            $status_icon = 'icon-check';
+            break;
+        case 'Rechazado':
+            $status_class = 'badge-danger';
+            $status_icon = 'icon-times';
+            break;
+    }   
+?>
+<span class="list-badge <?= $status_class ?>">
+    <i class="<?= $status_icon ?>"></i>
+</span>
+<?= $value ?>

@@ -1,26 +1,42 @@
 columns:
     status:
         label: Estado
-        type: text
+        type: partial
+        path: $/gibraltarsf/pmo/controllers/ideas/_status_column.htm
     name:
         label: Idea
         type: text
+        searchable: true
+        sortable: true
     code:
         label: Código
         type: text
-    
+        searchable: true
+        sortable: true
     requestor:
         label: Solicitante
         relation: requestor
         select: concat(first_name, ' ', last_name)
+        sortable: true
     pilar:
         label: pilar
         relation: pilar
         select: name
+        sortable: true
     supervisor:
         label: supervisor
         relation: supervisor
         select: concat(first_name, ' ', last_name)
+    value_score:
+        label: Valoración
+        type: number
+        sortable: false
+        search: false
+    risk_score:
+        label: Riesgo
+        type: number
+        sortable: false
+        search: false
 #    situacion:
 #        label: situacion
 #        type: text
@@ -33,15 +49,18 @@ columns:
 #    alcance:
 #        label: alcance
 #        type: text
-    created_by:
-        label: Creada por
-        relation: creator
-        select: concat(first_name, ' ', last_name)
     pm:
         label: PM
         relation: pm
         select: concat(first_name, ' ', last_name)
+        sortable: true
     created_at:
         label: Creada el
         type: datetime
         format: d-m-Y
+        sortable: true
+    created_by:
+        label: Creada por
+        relation: creator
+        select: concat(first_name, ' ', last_name)
+        sortable: true
