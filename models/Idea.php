@@ -210,7 +210,7 @@ class Idea extends Model
     public function filterFields($fields, $context = null)
     {
         $requestor = $this->requestor;
-        if ($requestor ) {
+        if ($requestor && $this->pilar_id == null && $this->supervisor_id == null) {
             if ($requestor->pilar) {
                 $fields->{'pilar'}->value = $requestor->pilar->id;
             }
