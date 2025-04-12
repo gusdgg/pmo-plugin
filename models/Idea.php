@@ -214,8 +214,14 @@ class Idea extends Model
             if ($requestor->pilar) {
                 $fields->{'pilar'}->value = $requestor->pilar->id;
             }
+            else {
+                $fields->{'pilar'}->value = null;
+            }
             if ($requestor->supervisor) {
                 $fields->{'supervisor'}->value = $requestor->supervisor->id;
+            }
+            else {
+                $fields->{'supervisor'}->value = null;
             }
         }
         }    
