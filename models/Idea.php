@@ -207,6 +207,19 @@ class Idea extends Model
         return $position;
     }
 
+    public function filterFields($fields, $context = null)
+    {
+        $requestor = $this->requestor;
+        if ($requestor ) {
+            if ($requestor->pilar) {
+                $fields->{'pilar'}->value = $requestor->pilar->id;
+            }
+            if ($requestor->supervisor) {
+                $fields->{'supervisor'}->value = $requestor->supervisor->id;
+            }
+        }
+        }    
+
 }
 
 /*

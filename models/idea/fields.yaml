@@ -13,6 +13,8 @@ fields:
         type: relation
         emptyOption: 'Seleccione un pilar...'
         select: name
+        dependsOn:
+            - requestor
     supervisor:
         label: 'Supervisor'
         span: storm
@@ -20,6 +22,8 @@ fields:
         type: relation
         emptyOption: 'Seleccione un supervisor...'
         select: concat(first_name, ' ', last_name)
+        dependsOn:
+            - requestor
     name:
         label: 'Idea'
         span: auto

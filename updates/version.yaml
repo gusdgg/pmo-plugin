@@ -80,4 +80,4 @@
     - builder_table_create_gibraltarsf_pmo_persons.php
 1.0.28:
     - 'Personas Seeder'
-    - ./seeder1028.php
+    - seeder1028.php
