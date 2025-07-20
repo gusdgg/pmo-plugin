@@ -72,7 +72,12 @@ class Idea extends Model
 
     public $morphMany = [
         'riesgos' => ['Gibraltarsf\Pmo\Models\Riesgo', 
-                       'name' => 'riskable']
+                       'name' => 'riskable'],
+                       
+    ];
+
+    public $hasMany = [
+        'etapas' => ['Gibraltarsf\Pmo\Models\Etapa', 'key' => 'idea_id', 'otherKey' => 'id', 'delete' => true],
     ];
 
     

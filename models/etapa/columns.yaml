@@ -1,0 +1,25 @@
+columns:
+    nombre:
+        label: nombre
+        type: text
+    inicio:
+        label: inicio
+        type: text
+    fin:
+        label: fin
+        type: text
+    inicio_real:
+        label: inicio_real
+        type: text
+    fin_real:
+        label: fin_real
+        type: text
+    participacion:
+        label: participacion
+        type: text
+    observaciones:
+        label: observaciones
+        type: text
+    hito:
+        label: hito
+        type: text

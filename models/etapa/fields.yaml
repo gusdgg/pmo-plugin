@@ -1,0 +1,33 @@
+fields:
+    nombre:
+        label: Nombre
+        span: auto
+        type: text
+    inicio:
+        label: Inicio
+        span: auto
+        type: datepicker
+    fin:
+        label: Fin
+        span: auto
+        type: datepicker
+    inicio_real:
+        label: 'Inicio real'
+        span: auto
+        type: datepicker
+    fin_real:
+        label: 'Fin real'
+        span: auto
+        type: datepicker
+    participacion:
+        label: Participacion
+        span: auto
+        type: number
+    observaciones:
+        label: Observaciones
+        span: auto
+        type: text
+    hito:
+        label: Hito
+        span: auto
+        type: text

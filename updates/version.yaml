@@ -81,3 +81,6 @@
 1.0.28:
     - 'Personas Seeder'
     - seeder1028.php
+1.0.29:
+    - 'Created table gibraltarsf_pmo_etapas'
+    - builder_table_create_gibraltarsf_pmo_etapas.php
