@@ -1,0 +1,29 @@
+columns:
+    fecha:
+        label: fecha
+        type: date
+        format: d-m-Y
+        ignoreTimezone: true
+    etapa:
+        label: etapa
+        type: text
+        relation: etapa
+        select: nombre
+    novedades:
+        label: novedades
+        type: text
+    proximos_pasos:
+        label: proximos_pasos
+        type: text
+    logros:
+        label: logros
+        type: text
+    status:
+        label: status
+        type: partial
+        path: $/gibraltarsf/pmo/controllers/ideas/_status_semanal.htm
+    avance:
+        label: avance [%]
+        type: number
+        align: right
+        format: "%.0f %%"

@@ -60,3 +60,49 @@ riesgos:
     #    form: ~/plugins/gibraltarsf/pmo/models/riesgo/fields_pivot.yaml
 
 
+etapas:
+    label: Etapas - Hitos
+    readOnly: false
+    view:
+        list: ~/plugins/gibraltarsf/pmo/models/etapa/columns.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/etapa/fields.yaml
+        showSearch: true
+        toolbarButtons:   create | delete
+        defaultSort:
+            column: inicio
+            direction: asc
+        recordsPerPage: 15
+        #scope: isEnabled
+    manage:
+        title: Etapa
+        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/etapa/fields.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/etapa/columns.yaml
+        showSearch: true
+        #scope: isEnabled
+    #pivot:
+    #    form: ~/plugins/gibraltarsf/pmo/models/riesgo/fields_pivot.yaml
+
+
+novedades:
+    label: Novedades
+    readOnly: false
+    view:
+        list: ~/plugins/gibraltarsf/pmo/models/novedad/columns.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/novedad/fields.yaml
+        showSearch: true
+        toolbarButtons:   create | delete
+        defaultSort:
+            column: fecha
+            direction: asc
+        recordsPerPage: 15
+        #scope: isEnabled
+    manage:
+        title: Novedad
+        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/novedad/fields.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/novedad/columns.yaml
+        showSearch: true
+        #scope: isEnabled
+    #pivot:
+    #    form: ~/plugins/gibraltarsf/pmo/models/riesgo/fields_pivot.yaml

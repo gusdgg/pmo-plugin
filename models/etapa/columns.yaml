@@ -1,25 +1,34 @@
 columns:
     nombre:
-        label: nombre
-        type: text
-    inicio:
-        label: inicio
-        type: text
-    fin:
-        label: fin
-        type: text
-    inicio_real:
-        label: inicio_real
-        type: text
-    fin_real:
-        label: fin_real
-        type: text
-    participacion:
-        label: participacion
-        type: text
-    observaciones:
-        label: observaciones
+        label: Etapa
         type: text
     hito:
         label: hito
         type: text
+    inicio:
+        label: Inicio
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
+    fin:
+        label: Fin
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
+    inicio_real:
+        label: inicio real
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
+    fin_real:
+        label: fin real
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
+    participacion:
+        label: Participación [%]
+        type: number
+        align: right
+        format: "%.0f %%"
+
+

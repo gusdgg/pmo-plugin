@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class Etapa extends Model
+class Novedad extends Model
 {
     use \Winter\Storm\Database\Traits\Validation;
     
@@ -13,7 +13,7 @@ class Etapa extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'gibraltarsf_pmo_etapas';
+    public $table = 'gibraltarsf_pmo_novedades';
 
     /**
      * @var array Validation rules
@@ -28,10 +28,7 @@ class Etapa extends Model
 
     public $belongsTo = [
         'idea' => ['Gibraltarsf\Pmo\Models\Idea', 'key' => 'idea_id', 'otherKey' => 'id'],
-    ];
-
-    public $hasMany = [
-        'novedades' => ['Gibraltarsf\Pmo\Models\Novedad', 'key' => 'etapa_id', 'otherKey' => 'id', 'delete' => true],
+        'etapa' => ['Gibraltarsf\Pmo\Models\Etapa', 'key' => 'etapa_id', 'otherKey' => 'id'],
     ];
 
 

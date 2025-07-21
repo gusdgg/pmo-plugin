@@ -1,0 +1,21 @@
+<?php
+  
+    switch ($value) {
+        case 'Verde':
+            $status_class = 'text-success';
+            $status_icon = 'icon-circle';
+            break;
+        case 'Amarillo':
+            $status_class = 'text-warning';
+            $status_icon = 'icon-circle';
+            break;
+        case 'Rojo':
+            $status_class = 'text-danger';
+            $status_icon = 'icon-circle';
+            break;
+
+    }   
+?>
+<span class=" <?= $status_class ?>">
+    <i class="<?= $status_icon ?>"></i>
+</span>

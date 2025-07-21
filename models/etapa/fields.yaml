@@ -1,33 +1,48 @@
 fields:
     nombre:
-        label: Nombre
+        label: Etapa
+        commentAbove: 'Nombre de la etapa o fase'
         span: auto
         type: text
-    inicio:
-        label: Inicio
-        span: auto
-        type: datepicker
-    fin:
-        label: Fin
-        span: auto
-        type: datepicker
-    inicio_real:
-        label: 'Inicio real'
-        span: auto
-        type: datepicker
-    fin_real:
-        label: 'Fin real'
-        span: auto
-        type: datepicker
-    participacion:
-        label: Participacion
-        span: auto
-        type: number
-    observaciones:
-        label: Observaciones
-        span: auto
-        type: text
+        required: true
     hito:
         label: Hito
+        commentAbove: 'Logro o resultado al finalizar la etapa'
+        span: auto
+        type: text
+        required: true
+    inicio:
+        label: Inicio
+        commentAbove: 'Fecha proyectada de inicio de la etapa'
+        span: auto
+        type: datepicker
+        mode: date
+        required: true
+        ignoreTimezone: true
+    fin:
+        label: Fin
+        commentAbove: 'Fecha proyectada de finalización de la etapa'
+        span: auto
+        type: datepicker
+        mode: date
+        required: true
+        ignoreTimezone: true
+#    inicio_real:
+#        label: 'Inicio real'
+#        span: auto
+#        type: datepicker
+#    fin_real:
+#        label: 'Fin real'
+#        span: auto
+#        type: datepicker
+    participacion:
+        label: Participación [%]
+        commentAbove: 'Ponderación de la etapa en el Proyecto, en porcentaje'
+        span: auto
+        type: number
+        required: true
+    observaciones:
+        label: Observaciones
+        commentAbove: 'Notas o comentarios adicionales sobre la etapa'
         span: auto
         type: text

@@ -78,6 +78,7 @@ class Idea extends Model
 
     public $hasMany = [
         'etapas' => ['Gibraltarsf\Pmo\Models\Etapa', 'key' => 'idea_id', 'otherKey' => 'id', 'delete' => true],
+        'novedades' => ['Gibraltarsf\Pmo\Models\Novedad', 'key' => 'idea_id', 'otherKey' => 'id', 'delete' => true],
     ];
 
     

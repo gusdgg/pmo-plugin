@@ -1,0 +1,45 @@
+fields:
+    novedades:
+        label: Novedades
+        span: auto
+        type: textarea
+    proximos_pasos:
+        label: 'Próximos pasos'
+        span: auto
+        type: textarea
+    logros:
+        label: Logros
+        span: auto
+        type: textarea
+    fecha:
+        label: Fecha
+        span: storm
+        cssClass: col-sm-3
+        type: datepicker
+        mode: date
+    status:
+        label: Status semanal
+        span: storm
+        cssClass: col-sm-3
+        type: dropdown
+        emptyOption: 'Seleccione un status...'
+        options:
+            Verde: Verde
+            Amarillo: Amarillo
+            Rojo: Rojo
+    etapa: 
+        label: Etapa
+        span: storm
+        cssClass: col-sm-6
+        type: relation
+        emptyOption: 'Seleccione una etapa...'
+        select: nombre
+
+    avance:
+        label: Avance
+        span: storm
+        cssClass: col-sm-6
+        type: range
+        step: 1
+        min: 1
+        max: 100

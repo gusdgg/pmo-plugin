@@ -104,10 +104,21 @@ tabs:
                 - preview
                 - update
             tab: Información
+        _etapas:
+            span: full
+            type: partial
+            tab: Etapas - Hitos
+            path: $/gibraltarsf/pmo/controllers/ideas/_etapas.htm
+            context:
+                - preview
+                - update
+
+
         _novedades:
             label: 'Novedades'
-            span: auto
-            type: text
+            span: full
+            type: partial
+            path: $/gibraltarsf/pmo/controllers/ideas/_novedades.htm
             tab: Novedades 
             context:
                 - preview
