@@ -1,7 +1,7 @@
 fields:
     nombre:
         label: Etapa
-        commentAbove: 'Nombre de la etapa o fase'
+        commentAbove: 'Nombre de la etapa, fase, período, ciclo, división, bloque, sprint, pasos'
         span: auto
         type: text
         required: true
