@@ -28,12 +28,20 @@ fields:
             Amarillo: Amarillo
             Rojo: Rojo
     etapa: 
-        label: Etapa
+        label: Hito
         span: storm
-        cssClass: col-sm-6
+        cssClass: col-sm-3
         type: relation
-        emptyOption: 'Seleccione una etapa...'
-        select: nombre
+        emptyOption: 'Seleccione un hito...'
+        select: concat (hito, ' - ', participacion, '%')
+
+    _cierra: 
+        label: Cierra hito
+        span: storm
+        cssClass: col-sm-3
+        type: checkbox
+        default: false
+
 
     avance:
         label: Avance

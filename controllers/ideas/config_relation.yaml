@@ -61,20 +61,20 @@ riesgos:
 
 
 etapas:
-    label: Etapas - Hitos
+    label: Hito
     readOnly: false
     view:
         list: ~/plugins/gibraltarsf/pmo/models/etapa/columns.yaml
         form: ~/plugins/gibraltarsf/pmo/models/etapa/fields.yaml
         showSearch: true
-        toolbarButtons:   create | delete
+        toolbarButtons:   create 
         defaultSort:
             column: inicio
             direction: asc
         recordsPerPage: 15
         #scope: isEnabled
     manage:
-        title: Etapa
+        title: Hito
         #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
         form: ~/plugins/gibraltarsf/pmo/models/etapa/fields.yaml
         list: ~/plugins/gibraltarsf/pmo/models/etapa/columns.yaml

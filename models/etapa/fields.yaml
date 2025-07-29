@@ -1,48 +1,61 @@
 fields:
-    nombre:
-        label: Etapa
-        commentAbove: 'Nombre de la etapa, fase, período, ciclo, división, bloque, sprint, pasos'
-        span: auto
-        type: text
-        required: true
+#    nombre:
+#        label: Etapa
+#        commentAbove: 'Nombre de la etapa, fase, período, ciclo, división, bloque, sprint, pasos'
+#        span: auto
+#        type: text
+#        required: true
     hito:
         label: Hito
-        commentAbove: 'Logro o resultado al finalizar la etapa'
-        span: auto
+        commentAbove: 'Logro o resultado al finalizar una etapa del proyecto'
+        span: full
         type: text
         required: true
     inicio:
-        label: Inicio
-        commentAbove: 'Fecha proyectada de inicio de la etapa'
-        span: auto
+        label: Fecha
+        commentAbove: 'Fecha de ocurrencia del hito'
+        span: storm
+        cssClass: col-sm-4
         type: datepicker
         mode: date
         required: true
         ignoreTimezone: true
-    fin:
-        label: Fin
-        commentAbove: 'Fecha proyectada de finalización de la etapa'
-        span: auto
-        type: datepicker
-        mode: date
-        required: true
-        ignoreTimezone: true
-#    inicio_real:
-#        label: 'Inicio real'
+#    fin:
+#        label: Fin
+#        commentAbove: 'Fecha proyectada de finalización de la etapa'
 #        span: auto
 #        type: datepicker
+#        mode: date
+#        required: true
+#        ignoreTimezone: true
+    inicio_real:
+        label: 'Fecha real'
+        commentAbove: 'Fecha real en la que ocurrió el hito'
+        span: storm
+        cssClass: col-sm-4
+        type: datepicker
+        mode: date
+        required: false
+        ignoreTimezone: true
+
 #    fin_real:
 #        label: 'Fin real'
 #        span: auto
 #        type: datepicker
+#        mode: date
+#        required: true
+#        ignoreTimezone: true
+#        context: [preview, update]
     participacion:
         label: Participación [%]
-        commentAbove: 'Ponderación de la etapa en el Proyecto, en porcentaje'
-        span: auto
+        commentAbove: 'Ponderación de la etapa en el Proyecto'
+        span: storm
+        cssClass: col-sm-4
         type: number
         required: true
     observaciones:
         label: Observaciones
-        commentAbove: 'Notas o comentarios adicionales sobre la etapa'
-        span: auto
-        type: text
+        commentAbove: 'Notas o comentarios adicionales sobre el hito'
+        span: full
+        type: textarea
+        size: small
