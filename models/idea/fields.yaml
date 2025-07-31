@@ -107,7 +107,7 @@ tabs:
         _etapas:
             span: full
             type: partial
-            tab: Etapas - Hitos
+            tab: Proyecto
             path: $/gibraltarsf/pmo/controllers/ideas/_etapas.htm
             context:
                 - preview

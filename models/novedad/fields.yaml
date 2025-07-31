@@ -36,7 +36,7 @@ fields:
         select: concat (hito, ' - ', participacion, '%')
 
     _cierra: 
-        label: Cierra hito
+        label: Cierra Tarea Resumen
         span: storm
         cssClass: col-sm-3
         type: checkbox

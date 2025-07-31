@@ -1,30 +1,30 @@
 columns:
-#    nombre:
-#        label: Etapa
-#        type: text
     hito:
         label: hito
         type: text
+    nombre:
+        label: Tarea Resumen
+        type: text
     inicio:
-        label: Fecha
+        label: Inicio proyectado
         type: datetime
         format: d-m-Y
         ignoreTimezone: true
-#    fin:
-#        label: Fin
-#        type: datetime
-#        format: d-m-Y
-#        ignoreTimezone: true
+    fin:
+        label: Fin proyectado
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
     inicio_real:
-        label: Fecha real
+        label: Inicio real
         type: datetime
         format: d-m-Y
         ignoreTimezone: true
-#    fin_real:
-#        label: fin real
-#        type: datetime
-#        format: d-m-Y
-#        ignoreTimezone: true
+    fin_real:
+        label: Fin real
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
     participacion:
         label: Participación [%]
         type: number
