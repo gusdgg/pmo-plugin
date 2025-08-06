@@ -1,0 +1,13 @@
+list: $/gibraltarsf/pmo/models/etapa/columns_nested.yaml
+modelClass: Gibraltarsf\Pmo\Models\Etapa
+title: Etapas
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'gibraltarsf/pmo/etapas/update/:id'
+showTree: true

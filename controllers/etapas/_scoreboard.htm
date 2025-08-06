@@ -1,0 +1,48 @@
+<!-- Scoreboard -->
+
+    <div class="scoreboard" style="padding-top: 20px;padding-left: 20px;">
+
+        <div data-control="toolbar">
+            <?
+                $colors = array("#95b753","#e5a91a","#cc3300","#631604","#381e1d");
+                $i = 0;
+            ?>
+
+
+            <div class="scoreboard-item title-value">
+                <h4>Hitos</h4>
+                <p><?= number_format( $hitosCount , 0, ',', '.') ?></p>
+                <p class="description">En el proyecto</p>
+            </div>
+
+            <div class="scoreboard-item title-value">
+                <h4>Duración total</h4>
+                <p><?= number_format( $duracionProyecto , 0, ',', '.') ?></p>
+                <p class="description">Días</p>
+            </div>
+            
+            <div class="scoreboard-item title-value">
+                <h4>Avance total</h4>
+                <p><?= number_format( $avance , 0, ',', '.') ?>%</p>
+                <p class="description"></p>
+            </div>
+
+
+            <!--
+            <div
+                data-control="chart-line"
+                data-time-mode="weeks"
+                style="height: 200px"
+                data-chart-options="xaxis: {mode: 'time'}">
+                <span
+                    data-chart="dataset"
+                    data-set-color="#008dc9"
+                    data-set-data="[1477857082000, 400], [1477943482000, 380], [1478029882000, 340], [1478116282000, 540], [1478202682000, 440], [1478289082000, 360], [1478375482000, 220]"
+                    data-set-name="Visits">
+                </span>
+            </div>
+            -->
+        </div>
+    </div>
+
+<!-- End Scoreboard -->

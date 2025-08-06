@@ -20,6 +20,14 @@ class BuilderTableCreateGibraltarsfPmoEtapas extends Migration
         $table->decimal('participacion', 14, 2)->nullable();
         $table->string('observaciones')->nullable();
         $table->string('hito')->nullable();
+
+        $table->integer('parent_id')->nullable();
+        $table->integer('nest_left')->nullable();
+        $table->integer('nest_right')->nullable();
+        $table->integer('nest_depth')->nullable();
+        $table->decimal('avance', 14, 2)->nullable();
+        $table->string('estado', 60)->nullable();
+        
         $table->timestamp('created_at')->nullable();
         $table->timestamp('updated_at')->nullable();
         
@@ -28,6 +36,11 @@ class BuilderTableCreateGibraltarsfPmoEtapas extends Migration
         $table->index('inicio_real');
         $table->index('fin');
         $table->index('fin_real');
+                
+        $table->index('parent_id');
+        $table->index('estado');
+        
+        
     });
 }
 

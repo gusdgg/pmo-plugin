@@ -1,0 +1,48 @@
+columns:
+    nombre:
+        label: Nombre
+        type: text
+#    parent:
+#        label: Tarea resumen
+#        type: text
+#        relation: parent
+#        select: nombre
+    inicio:
+        label: Inicio proyectado
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
+    fin:
+        label: Fin proyectado
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
+    duracion:
+        label: Duración
+        type: partial
+        path: $/gibraltarsf/pmo/controllers/etapas/_duracion.htm
+    inicio_real:
+        label: Inicio real
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
+    fin_real:
+        label: Fin real
+        type: datetime
+        format: d-m-Y
+        ignoreTimezone: true
+    avance_real:
+        label: Avance [%]
+        type: partial
+        path: $/gibraltarsf/pmo/controllers/etapas/_avance.htm
+        align: right
+    estado:
+        label: Estado
+        type: text
+#    avance:
+#        label: Avance [%]
+#        type: number
+#        align: right
+#        format: "%.0f %%"
+
+

@@ -1,0 +1,10 @@
+name: Etapas
+form: $/gibraltarsf/pmo/models/etapa/fields_nested.yaml
+modelClass: Gibraltarsf\Pmo\Models\Etapa
+defaultRedirect: gibraltarsf/pmo/etapas
+create:
+    redirect: 'gibraltarsf/pmo/etapas/update/:id'
+    redirectClose: gibraltarsf/pmo/etapas
+update:
+    redirect: gibraltarsf/pmo/etapas
+    redirectClose: gibraltarsf/pmo/etapas

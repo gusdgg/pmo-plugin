@@ -61,24 +61,26 @@ riesgos:
 
 
 etapas:
-    label: Hito
+    label: Tareas resumen - Hitos
     readOnly: false
     view:
-        list: ~/plugins/gibraltarsf/pmo/models/etapa/columns.yaml
-        form: ~/plugins/gibraltarsf/pmo/models/etapa/fields.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/etapa/columns_nested.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/etapa/fields_nested.yaml
         showSearch: true
         toolbarButtons:   create 
         defaultSort:
             column: inicio
             direction: asc
         recordsPerPage: 15
+        showTree: true
         #scope: isEnabled
     manage:
-        title: Hito
+        title: Tareas resumen - Hitos
         #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
-        form: ~/plugins/gibraltarsf/pmo/models/etapa/fields.yaml
-        list: ~/plugins/gibraltarsf/pmo/models/etapa/columns.yaml
+        form: ~/plugins/gibraltarsf/pmo/models/etapa/fields_nested.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/etapa/columns_nested.yaml
         showSearch: true
+        
         #scope: isEnabled
     #pivot:
     #    form: ~/plugins/gibraltarsf/pmo/models/riesgo/fields_pivot.yaml

@@ -1,0 +1,13 @@
+<?
+$avance = $record->getAvance();
+ //echo $avance . ' %';
+?>
+<!--
+<input type="range" step="1" name="Etapa[avance]" id="Form-field-Etapa-avance" value="<?=$avance?>" min="0" max="100">
+<span style="position: absolute; transform: translateX(-50%); left: calc(100% - 7px);"><?=$avance?></span>
+-->
+<? if ($avance > 0) { ?>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: <?=$avance?>%;line-height: 1.43em;" aria-valuenow="<?=$avance?>" aria-valuemin="0" aria-valuemax="100"><?=$avance?>%</div>
+    </div>
+<? } ?>

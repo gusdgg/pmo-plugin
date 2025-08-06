@@ -1,0 +1,8 @@
+# Reorder Title
+title: Reorder Tareas - Hitos
+
+# Attribute name
+nameFrom: nombre
+modelClass: Gibraltarsf\Pmo\Models\Etapa
+toolbar:
+    buttons: reorder_toolbar

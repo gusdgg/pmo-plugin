@@ -83,7 +83,7 @@
     - seeder1028.php
 1.0.29:
     - 'Created table gibraltarsf_pmo_etapas'
-    - builder_table_create_gibraltarsf_pmo_etapas.php
+    - ./builder_table_create_gibraltarsf_pmo_etapas.php
 1.0.30:
     - 'Created table gibraltarsf_pmo_novedades'
     - ./builder_table_create_gibraltarsf_pmo_novedades.php

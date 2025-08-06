@@ -1,0 +1,103 @@
+fields:
+    nombre:
+        label: Detalle
+        commentAbove: 'Nombre de la tarea resumen o hito'
+        span: auto
+        type: text
+        required: true
+    parent:
+        label: Tarea resumen
+        commentAbove: 'Tarea resumen a la que pertenece'
+        span: auto
+        type: dropdown
+        emptyOption: 'Seleccionar...'
+    inicio:
+        label: Inicio proyectado
+        commentAbove: 'Fecha de inicio de este bloque de tareas'
+        #span: storm
+        #cssClass: col-sm-4
+        span: auto
+        type: datepicker
+        mode: date
+        ignoreTimezone: true
+        trigger:
+            action: hide
+            field: parent
+            condition: value[]
+
+        
+    fin:
+        label: Fin proyectado
+        commentAbove: 'Fecha proyectada de finalización de este bloque de tareas'
+        span: auto
+        type: datepicker
+        mode: date
+        ignoreTimezone: true
+        trigger:
+            action: hide
+            field: parent
+            condition: value[]
+
+    inicio_real:
+        label: 'Inicio real'
+        commentAbove: 'Fecha real en la que ocurrió el inicio de este bloque de tareas'
+        #span: storm
+        #cssClass: col-sm-4
+        span: auto
+        type: datepicker
+        mode: date
+        ignoreTimezone: true
+        trigger:
+            action: hide
+            field: parent
+            condition: value[]
+
+    fin_real:  
+        label: 'Fin real'
+        commentAbove: 'Fecha real en la que ocurrió el fin de este bloque de tareas'
+        span: auto
+        type: datepicker
+        mode: date
+        ignoreTimezone: true
+        trigger:
+            action: hide
+            field: parent
+            condition: value[]
+        #context: [preview, update]
+    avance:
+        label: Avance [%]
+        commentAbove: 'Porcentaje de avance de las tareas para cumplir con el hito'
+        #span: storm
+        #cssClass: col-sm-4
+        span: auto
+        type: range
+        default: 0
+        step: 1
+        min: 0
+        max: 100
+        trigger:
+            action: hide
+            field: parent
+            condition: value[]
+    estado:
+        label: Estado
+        type: dropdown
+        emptyOption: 'Seleccionar...'
+        span: auto
+        options:
+            Sin iniciar: Sin iniciar
+            En curso: En curso
+            Finalizado: Finalizado
+            Camino Crítico: Camino Crítico
+            Bloqueado: Bloqueado
+        trigger:
+            action: hide
+            field: parent
+            condition: value[]
+
+    observaciones:
+        label: Observaciones
+        commentAbove: 'Notas o comentarios adicionales'
+        span: auto
+        type: textarea
+        size: small
