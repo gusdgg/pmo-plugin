@@ -3,11 +3,11 @@
 use Schema;
 use Winter\Storm\Database\Updates\Migration;
 
-class BuilderTableCreateGibraltarsfPmoRiscriterias extends Migration
+class BuilderTableCreateGibraltarsfPmoEsfcriterias extends Migration
 {
     public function up()
 {
-    Schema::create('gibraltarsf_pmo_riscriterias', function($table)
+    Schema::create('gibraltarsf_pmo_esfcriterias', function($table)
     {
         $table->engine = 'InnoDB';
         $table->increments('id')->unsigned();
@@ -21,6 +21,6 @@ class BuilderTableCreateGibraltarsfPmoRiscriterias extends Migration
 
 public function down()
 {
-    Schema::dropIfExists('gibraltarsf_pmo_riscriterias');
+    Schema::dropIfExists('gibraltarsf_pmo_esfcriterias');
 }
 }

@@ -1,0 +1,29 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+
+score_tooltips:
+    label: Puntuaciones
+    readOnly: false
+    view:
+        list: ~/plugins/gibraltarsf/pmo/models/score/columns_criteria.yaml
+        #form: ~/plugins/gibraltarsf/pmo/models/score/fields.yaml
+        showSearch: true
+        toolbarButtons:   Add | Remove
+        defaultSort:
+            column: name
+            direction: asc
+        recordsPerPage: 15
+        #scope: isEnabled
+    manage:
+        title: Puntuaciones disponibles
+        #form: ~/plugins/gibraltarsf/importaciones/models/period/fields.yaml
+        #form: ~/plugins/gibraltarsf/pmo/models/score/fields.yaml
+        list: ~/plugins/gibraltarsf/pmo/models/score/columns_criteria.yaml
+        showSearch: true
+        #scope: isEnabled
+    pivot:
+        form: ~/plugins/gibraltarsf/pmo/models/score/fields_pivot_tooltip.yaml
+
+

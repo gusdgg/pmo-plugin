@@ -1,0 +1,21 @@
+columns:
+    name:
+        label: 'Criterio de esfuerzo'
+        type: text
+        searchable: true
+        sortable: true
+    weight:
+        label: 'Peso en %'
+        type: number
+        invisible: false
+        sortable: true
+    created_at:
+        label: 'Creado el'
+        type: datetime
+        format: d-m-Y H:i
+        sortable: true
+    updated_at:
+        label: 'Actualizado el'
+        type: datetime
+        sortable: true
+        format: d-m-Y H:i

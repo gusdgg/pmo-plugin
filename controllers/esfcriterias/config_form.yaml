@@ -1,0 +1,10 @@
+name: Esfcriterias
+form: $/gibraltarsf/pmo/models/esfcriteria/fields.yaml
+modelClass: Gibraltarsf\Pmo\Models\Esfcriteria
+defaultRedirect: gibraltarsf/pmo/esfcriterias
+create:
+    redirect: 'gibraltarsf/pmo/esfcriterias/update/:id'
+    redirectClose: gibraltarsf/pmo/esfcriterias
+update:
+    redirect: gibraltarsf/pmo/esfcriterias
+    redirectClose: gibraltarsf/pmo/esfcriterias

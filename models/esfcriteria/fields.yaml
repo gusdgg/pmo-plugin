@@ -1,6 +1,6 @@
 fields:
     name:
-        label: 'Criterio de valor'
+        label: 'Criterio de esfuerzo'
         span: auto
         type: text
         required: 1
@@ -8,7 +8,7 @@ fields:
         label: 'Detalle'
         span: auto
         type: text
-        required: 1        
+        required: 1
     weight:
         label: 'Peso en %'
         span: auto
@@ -20,7 +20,7 @@ tabs:
             span: full
             type: partial
             tab: Ayudas para puntuación
-            path: $/gibraltarsf/pmo/controllers/valcriterias/_scores.htm
+            path: $/gibraltarsf/pmo/controllers/esfcriterias/_scores.htm
             context:
                 - preview
                 - update

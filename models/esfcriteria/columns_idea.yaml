@@ -1,0 +1,11 @@
+columns:
+    name:
+        label: 'Criterio de esfuerzo'
+        type: text
+        searchable: true
+        sortable: true
+    pivot[score_id]:
+        label: 'Puntuación'
+        type: partial
+        path: $/gibraltarsf/pmo/controllers/ideas/_score_esfuerzo.htm
+      

@@ -57,6 +57,21 @@ class Ideas extends Controller
       
     }
 
+    public function onChangeEsfuerzoScore($idea_id)
+    {
+        $data = post();
+        $value = $data['esfuerzo_id'];
+        $score = $data['score_id'];
+
+        $ideaDb = $this->formFindModelObject($idea_id);
+        $ideaDb->esfuerzoweights()->updateExistingPivot($value, ['score_id' => $score]);
+        $ideaDb->save();
+
+        $view = $this->makePartial('esfuerzo_score', ['model' => $ideaDb]);
+        return array("#Form-field-Idea-_esfuerzo_score-group" => $view);
+      
+    }
+
     
     public function preview_onChangeRiskScore($id)
     {

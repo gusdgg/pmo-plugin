@@ -1,0 +1,65 @@
+<!-- Scoreboard -->
+<div class="card"style="background-color: #fefefe;">
+    <div class="card-body" >
+        <div class="scoreboard" style="padding-top: 20px;padding-left: 20px;">
+            <div data-control="toolbar">
+                <!-- Chart 
+                <div class="scoreboard-item ">
+                    <div class="chart-container" style="height:80px; width:80px">
+                        <canvas id="openedCanvas"></canvas>
+                    </div>
+                </div>
+                -->
+                <div class="scoreboard-item title-value" data-control="goal-meter" data-value="<?= $model->esfuerzo_score ?>">
+                    <h4>Esfuerzo</h4>
+                    <p><?= $model->esfuerzo_score ?>%</p>
+                    <p class="description"><?= $model->esfuerzo_position ?>° En la cartera</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Scoreboard -->
+<!-- Chart 
+<script>
+    $(document).ready(function() {
+        var deliveredData = {
+        datasets: [
+            {
+                data: [<?= $model->value_score ?>, <?= 100 - $model->value_score ?>],
+                backgroundColor: ['#48BB78', '#EDF2F7'],
+                borderWidth: 0
+            }]
+    };
+
+    var deliveredOpt = {
+        aspectRatio: 1,
+        cutout: 30,
+        animation: {
+            animationRotate: true,
+            duration: 500,
+            animateScale: true,
+            onComplete: function() {
+                var canvasBounds = canvas.getBoundingClientRect();
+                dataLabel.innerHTML = ' Utilizado:  95 %';
+                var dataLabelBounds = dataLabel.getBoundingClientRect();
+                dataLabel.style.top = (canvasBounds.top + (canvasBounds.height / 2) - (dataLabelBounds.height / 2)) + 'px';
+                dataLabel.style.left = (canvasBounds.left + (canvasBounds.width / 2) - (dataLabelBounds.width / 2)) + 'px';
+            }
+        },        
+        legend: {
+            display: true
+        },
+        tooltips: {
+            enabled: false
+        }
+    };
+
+   var chart = new Chart($('#openedCanvas'), {
+        type: 'doughnut',
+        data: deliveredData,
+        options: deliveredOpt
+    });
+});    
+  </script>
+  -->

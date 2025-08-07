@@ -6,6 +6,7 @@ use Gibraltarsf\Pmo\Models\Pilar;
 
 use Gibraltarsf\Pmo\Models\Valcriteria;
 use Gibraltarsf\Pmo\Models\Riscriteria;
+use Gibraltarsf\Pmo\Models\Esfcriteria;
 use DB;
 use Backend\Facades\BackendAuth;
 
@@ -64,6 +65,15 @@ class Idea extends Model
             'table'    => 'gibraltarsf_pmo_idea_risk',
             'key'      => 'idea_id',
             'otherKey' => 'riscriteria_id',
+            'pivot' => ['score_id'],
+            'timestamps' => true,
+            'delete' => true
+        ],
+        'esfuerzoweights' => [
+            'Gibraltarsf\Pmo\Models\Esfcriteria',
+            'table'    => 'gibraltarsf_pmo_idea_esfuerzo',
+            'key'      => 'idea_id',
+            'otherKey' => 'esfcriteria_id',
             'pivot' => ['score_id'],
             'timestamps' => true,
             'delete' => true
@@ -212,6 +222,24 @@ class Idea extends Model
         }
         return $position;
     }
+
+
+    public function getEsfuerzoScoreAttribute()
+    {
+        
+        $max_value_score = Esfcriteria::sum('weight') * Score::max('value');
+
+        $value_score = Idea::whereRaw('gibraltarsf_pmo_ideas.id = ?', [$this->id])
+        ->join('gibraltarsf_pmo_idea_esfuerzo', 'gibraltarsf_pmo_ideas.id', '=', 'gibraltarsf_pmo_idea_esfuerzo.idea_id')
+        ->join('gibraltarsf_pmo_esfcriterias', 'gibraltarsf_pmo_idea_esfuerzo.esfcriteria_id', '=', 'gibraltarsf_pmo_esfcriterias.id')
+        ->join('gibraltarsf_pmo_scores', 'gibraltarsf_pmo_idea_esfuerzo.score_id', '=', 'gibraltarsf_pmo_scores.id')
+        ->sum(DB::raw('gibraltarsf_pmo_esfcriterias.weight * gibraltarsf_pmo_scores.value') );
+
+        return round($value_score / ($max_value_score ? $max_value_score : 1) * 100, 2);
+    }
+
+    
+
 
     public function filterFields($fields, $context = null)
     {

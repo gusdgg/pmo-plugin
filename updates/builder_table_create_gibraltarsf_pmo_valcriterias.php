@@ -12,6 +12,7 @@ class BuilderTableCreateGibraltarsfPmoValcriterias extends Migration
         $table->engine = 'InnoDB';
         $table->increments('id')->unsigned();
         $table->string('name')->nullable();
+        $table->string('help')->nullable();
         $table->decimal('weight', 10, 2)->nullable();
         $table->timestamp('created_at')->nullable();
         $table->timestamp('updated_at')->nullable();

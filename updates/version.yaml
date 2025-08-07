@@ -56,13 +56,13 @@
     - builder_table_create_gibraltarsf_pmo_ideas.php
 1.0.20:
     - 'Created table gibraltarsf_pmo_valcriterias'
-    - builder_table_create_gibraltarsf_pmo_valcriterias.php
+    - ./builder_table_create_gibraltarsf_pmo_valcriterias.php
 1.0.21:
     - 'Valcriterias Seeder'
     - seeder1021.php
 1.0.22:
     - 'Created table gibraltarsf_pmo_riscriterias'
-    - builder_table_create_gibraltarsf_pmo_riscriterias.php
+    - ./builder_table_create_gibraltarsf_pmo_riscriterias.php
 1.0.23:
     - 'Riscriterias Seeder'
     - seeder1023.php
@@ -87,3 +87,9 @@
 1.0.30:
     - 'Created table gibraltarsf_pmo_novedades'
     - ./builder_table_create_gibraltarsf_pmo_novedades.php
+1.0.31:
+    - 'Created table gibraltarsf_pmo_esfcriterias'
+    - ./builder_table_create_gibraltarsf_pmo_esfcriterias.php
+1.0.32:
+    - 'Created table gibraltarsf_pmo_idea_esfuerzo'
+    - ./builder_table_create_gibraltarsf_pmo_idea_esfuerzo.php

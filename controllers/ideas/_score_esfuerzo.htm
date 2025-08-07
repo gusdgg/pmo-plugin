@@ -1,0 +1,25 @@
+<?
+$scores = \Gibraltarsf\Pmo\Models\Score::all();
+?>
+
+<div <?= ($formContext !== 'preview' ? "data-control='balloon-selector'" : "") ?> class="control-balloon-selector">
+    <ul>
+        <?php foreach ($scores as $score) : ?>
+        <? 
+        $active = ($record->pivot->score_id == $score->id);
+        $score_tooltip = \Gibraltarsf\Pmo\Models\Esfcriteria::find($record->id)->score_tooltips()->where('score_id', $score->id)->first();
+        ?>
+            <li data-value="<?= $score->id ?>" 
+            <?php if ($score_tooltip) : ?>
+                data-toggle="tooltip"
+                data-placement="top"
+                data-delay="500"
+                title="<?= $score_tooltip->pivot->tooltip ?>" 
+            <?php endif; ?>                
+             class="<?= $active ? 'active' : '' ?>" onclick=" $.request('onChangeEsfuerzoScore', {data: {score_id: <?= $score->id ?>, esfuerzo_id: <?= $record->id ?>}})"><?= $score->name ?></li>
+        <?php endforeach; ?>
+       
+    </ul>
+
+    <input type="hidden" name="balloonRisk" value="1" />
+</div>

@@ -14,6 +14,7 @@ class BuilderTableCreateGibraltarsfPmoCriteriaScore extends Migration
         $table->string('criteria_type')->nullable();
         $table->integer('valcriteria_id')->nullable();
         $table->integer('riscriteria_id')->nullable();
+        $table->integer('esfcriteria_id')->nullable();
         $table->integer('score_id')->nullable();
         $table->text('tooltip',512)->nullable();
         $table->timestamp('created_at')->nullable();
@@ -22,6 +23,7 @@ class BuilderTableCreateGibraltarsfPmoCriteriaScore extends Migration
         $table->index('criteria_type');
         $table->index('valcriteria_id');
         $table->index('riscriteria_id');
+        $table->index('esfcriteria_id');
         $table->index('score_id');
 });
 }

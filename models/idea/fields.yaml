@@ -155,14 +155,23 @@ tabs:
             context:
                 - preview
                 - update
-        _risk_score:
+#        _risk_score:
+#            span: auto
+#            type: partial
+#            tab: Puntuación 
+#            path: $/gibraltarsf/pmo/controllers/ideas/_risk_score.htm
+#            context:
+#                - preview
+#                - update
+        _esfuerzo_score:
             span: auto
             type: partial
-            tab: Puntuación 
-            path: $/gibraltarsf/pmo/controllers/ideas/_risk_score.htm
+            tab: Puntuación
+            path: $/gibraltarsf/pmo/controllers/ideas/_esfuerzo_score.htm
             context:
                 - preview
                 - update
+
         valueweights:   
             span: auto
             type: partial
@@ -171,14 +180,23 @@ tabs:
             context:
                 - preview
                 - update
-        riskweights:
+        esfuerzoweights:
             span: auto
             type: partial
             tab: Puntuación 
-            path: $/gibraltarsf/pmo/controllers/ideas/_riskweights.htm
+            path: $/gibraltarsf/pmo/controllers/ideas/_esfuerzoweights.htm
             context:
                 - preview
                 - update
+
+#        riskweights:
+#            span: auto
+#            type: partial
+#            tab: Puntuación 
+#            path: $/gibraltarsf/pmo/controllers/ideas/_riskweights.htm
+#            context:
+#                - preview
+#                - update
         _nada:
             label: 'Nada'
             span: auto
