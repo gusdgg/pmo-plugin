@@ -35,11 +35,7 @@ class Ideas extends Controller
 
 
 
-    public function preview_onChangeValScore($id)
-    {
-        //en preview es read only y no hay modificaciones
-        return;
-    }
+
 
 
     public function onChangeValScore($idea_id)
@@ -59,6 +55,9 @@ class Ideas extends Controller
 
     public function onChangeEsfuerzoScore($idea_id)
     {
+     
+        $matrizDb = $this->formFindModelObject($idea_id)->matrizWithoutMe()->toArray();
+     
         $data = post();
         $value = $data['esfuerzo_id'];
         $score = $data['score_id'];
@@ -73,11 +72,7 @@ class Ideas extends Controller
     }
 
     
-    public function preview_onChangeRiskScore($id)
-    {
-        //en preview es read only y no hay modificaciones
-        return;
-    }
+    
 
 
     public function onChangeRiskScore($idea_id)
@@ -94,4 +89,25 @@ class Ideas extends Controller
         return array("#Form-field-Idea-_risk_score-group" => $view);
       
     }    
+
+    public function preview_onChangeValScore($id)
+    {
+        //en preview es read only y no hay modificaciones
+        return;
+    }
+
+    public function preview_onChangeRiskScore($id)
+    {
+        //en preview es read only y no hay modificaciones
+        return;
+    }
+
+
+    public function preview_onChangeEsfuerzoScore($id)
+    {
+        //en preview es read only y no hay modificaciones
+        return;
+    }
+    
+
 }

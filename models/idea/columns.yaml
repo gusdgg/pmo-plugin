@@ -32,6 +32,12 @@ columns:
         type: number
         sortable: false
         search: false
+    esfuerzo_score:
+        label: Esfuerzo
+        type: number
+        sortable: false
+        search: false
+
     risk_score:
         label: Riesgo
         type: number

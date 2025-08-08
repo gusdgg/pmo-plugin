@@ -1,3 +1,4 @@
+
 <!-- Scoreboard -->
 <div class="card"style="background-color: #fefefe;">
     <div class="card-body" >
@@ -15,6 +16,26 @@
                     <p><?= $model->value_score ?>%</p>
                     <p class="description"><?= $model->value_position ?>° En la cartera</p>
                 </div>
+
+<!--
+                <div class="scoreboard-item title-value">
+                    <h4>Propuestas</h4>
+                    <p><?= \Gibraltarsf\Pmo\Models\Idea::where('status','!=', 'borrador')->where('status','!=', 'rechazado')->count() ?></p>
+                    <p class="description">Ingresadas</p>
+                </div>
+            -->
+                <div class="scoreboard-item control-chart" data-control="chart-pie" style="width: 10px; height: 120px;">
+                    <ul>
+                        
+                        <li data-color="#95b753">Beneficio <span><?= round($model->beneficio ? $model->beneficio->ponderacion * $model->beneficio->valor : 0, 2) ?></span></li>
+                        <li data-color="#e5a91a">Escalabilidad <span><?= round($model->escalabilidad ? $model->escalabilidad->ponderacion * $model->escalabilidad->valor : 0, 2) ?></span></li>
+                        <li data-color="#cc3300">Alineación <span><?= round($model->alineacion ? $model->alineacion->ponderacion * $model->alineacion->valor : 0, 2) ?></span></li>
+                        <li data-color="#3366ff">Tiempo <span><?= round($model->tiempo ? $model->tiempo->ponderacion * $model->tiempo->valor : 0, 2) ?></span></li>
+                        <li data-color="#fcd202">Novedad <span><?= round($model->novedad ? $model->novedad->ponderacion * $model->novedad->valor : 0, 2) ?></span></li>
+                        
+                    </ul>
+                </div>                   
+
             </div>
         </div>
     </div>

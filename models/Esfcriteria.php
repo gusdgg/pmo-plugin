@@ -24,8 +24,8 @@ class Esfcriteria extends Model
     public $belongsToMany = [
         'idea' => [
             'Gibraltarsf\Pmo\Models\Idea',
-            'table'    => 'gibraltarsf_pmo_idea_esfuerzo',
-            'key'      => 'esfcriteria_id',
+            'table'    => 'gibraltarsf_pmo_idea_value',
+            'key'      => 'valcriteria_id',
             'otherKey' => 'idea_id',
             'pivot' => ['score_id'],
             'timestamps' => true

@@ -148,7 +148,9 @@ tabs:
                 - preview
                 - update
         _value_score:
-            span: auto
+            span: storm
+            cssClass: col-md-4
+
             type: partial
             tab: Puntuación 
             path: $/gibraltarsf/pmo/controllers/ideas/_value_score.htm
@@ -163,8 +165,23 @@ tabs:
 #            context:
 #                - preview
 #                - update
+        _matriz:
+            span: storm
+            cssClass: col-md-4
+            type: partial
+            tab: Puntuación
+            path: $/gibraltarsf/pmo/controllers/ideas/_matriz.htm
+            dependsOn:
+                - valueweights
+                - esfuerzoweights
+            context:
+                - preview
+                - update
+
         _esfuerzo_score:
-            span: auto
+            span: storm
+            cssClass: col-md-4
+
             type: partial
             tab: Puntuación
             path: $/gibraltarsf/pmo/controllers/ideas/_esfuerzo_score.htm
@@ -180,6 +197,7 @@ tabs:
             context:
                 - preview
                 - update
+
         esfuerzoweights:
             span: auto
             type: partial

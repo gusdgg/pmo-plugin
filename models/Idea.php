@@ -115,10 +115,11 @@ class Idea extends Model
         $idea_id = $this->id;
         $values = Valcriteria::all();
         $risks = Riscriteria::all();
+        $esfuerzos = Esfcriteria::all();
 
         $this->valueweights()->sync($values);
         $this->riskweights()->sync($risks);
-
+        $this->esfuerzoweights()->sync($esfuerzos);
     }
 
     public function getRiskScoreAttribute()
@@ -259,6 +260,93 @@ class Idea extends Model
             }
         }
         }    
+
+        public function matrizWithoutMe(){
+
+
+            // impacto de valor
+            $max_score = Score::max('value') ? Score::max('value') : 1;
+            $max_value_score = Valcriteria::sum('weight') * Score::max('value');
+            $max_value_score = $max_value_score ? $max_value_score : 1;
+
+            // maximo de esfuerzo
+            $max_esfuerzo_score= Esfcriteria::sum('weight') * Score::max('value');
+            $max_esfuerzo_score = $max_esfuerzo_score ? $max_esfuerzo_score : 1;
+
+            $matrizDb = Idea::select(\DB::raw('
+            
+                (select round(sum(gibraltarsf_pmo_valcriterias.weight * gibraltarsf_pmo_scores.value) / '.$max_value_score.' * 100, 2) 
+                from  gibraltarsf_pmo_idea_value
+                join gibraltarsf_pmo_valcriterias on gibraltarsf_pmo_idea_value.valcriteria_id = gibraltarsf_pmo_valcriterias.id
+                inner join gibraltarsf_pmo_scores on gibraltarsf_pmo_idea_value.score_id = gibraltarsf_pmo_scores.id 
+                where gibraltarsf_pmo_ideas.id = gibraltarsf_pmo_idea_value.idea_id 
+                ) as y, 
+                            
+               (select round(sum(gibraltarsf_pmo_esfcriterias.weight * gibraltarsf_pmo_scores.value) / '.$max_esfuerzo_score.' * 100, 2) 
+                from  gibraltarsf_pmo_idea_esfuerzo
+                join gibraltarsf_pmo_esfcriterias on gibraltarsf_pmo_idea_esfuerzo.esfcriteria_id = gibraltarsf_pmo_esfcriterias.id
+                inner join gibraltarsf_pmo_scores on gibraltarsf_pmo_idea_esfuerzo.score_id = gibraltarsf_pmo_scores.id 
+                where gibraltarsf_pmo_ideas.id = gibraltarsf_pmo_idea_esfuerzo.idea_id) as x,             
+            
+                (select round(sc.value / '.$max_score.' * 15, 2) 
+                from gibraltarsf_pmo_idea_value iv 
+                join gibraltarsf_pmo_valcriterias vc on vc.id = iv.valcriteria_id
+                join gibraltarsf_pmo_scores sc on sc.id = iv.score_id
+                where vc.name like "%beneficios pot%" and iv.idea_id = gibraltarsf_pmo_ideas.id) as r
+
+            '))
+
+            ->whereRaw('gibraltarsf_pmo_ideas.id != ?', [$this->id])
+            ->get();
+
+            return $matrizDb;
+    
+            
+        }
+
+
+        public function myMatriz(){
+
+
+            // impacto de valor
+            $max_score = Score::max('value') ? Score::max('value') : 1;
+            $max_value_score = Valcriteria::sum('weight') * Score::max('value');
+            $max_value_score = $max_value_score ? $max_value_score : 1;
+
+            // maximo de esfuerzo
+            $max_esfuerzo_score= Esfcriteria::sum('weight') * Score::max('value');
+            $max_esfuerzo_score = $max_esfuerzo_score ? $max_esfuerzo_score : 1;
+
+            $matrizDb = Idea::select(\DB::raw('
+            
+                (select round(sum(gibraltarsf_pmo_valcriterias.weight * gibraltarsf_pmo_scores.value) / '.$max_value_score.' * 100, 2) 
+                from  gibraltarsf_pmo_idea_value
+                join gibraltarsf_pmo_valcriterias on gibraltarsf_pmo_idea_value.valcriteria_id = gibraltarsf_pmo_valcriterias.id
+                inner join gibraltarsf_pmo_scores on gibraltarsf_pmo_idea_value.score_id = gibraltarsf_pmo_scores.id 
+                where gibraltarsf_pmo_ideas.id = gibraltarsf_pmo_idea_value.idea_id 
+                ) as y, 
+                            
+               (select round(sum(gibraltarsf_pmo_esfcriterias.weight * gibraltarsf_pmo_scores.value) / '.$max_esfuerzo_score.' * 100, 2) 
+                from  gibraltarsf_pmo_idea_esfuerzo
+                join gibraltarsf_pmo_esfcriterias on gibraltarsf_pmo_idea_esfuerzo.esfcriteria_id = gibraltarsf_pmo_esfcriterias.id
+                inner join gibraltarsf_pmo_scores on gibraltarsf_pmo_idea_esfuerzo.score_id = gibraltarsf_pmo_scores.id 
+                where gibraltarsf_pmo_ideas.id = gibraltarsf_pmo_idea_esfuerzo.idea_id) as x,             
+            
+                (select round(sc.value / '.$max_score.' * 15, 2) 
+                from gibraltarsf_pmo_idea_value iv 
+                join gibraltarsf_pmo_valcriterias vc on vc.id = iv.valcriteria_id
+                join gibraltarsf_pmo_scores sc on sc.id = iv.score_id
+                where vc.name like "%beneficios pot%" and iv.idea_id = gibraltarsf_pmo_ideas.id) as r
+
+            '))
+
+            ->whereRaw('gibraltarsf_pmo_ideas.id = ?', [$this->id])
+            ->get();
+
+            return $matrizDb;
+    
+            
+        }        
 
 }
 
