@@ -7,6 +7,9 @@ columns:
 #        type: text
 #        relation: parent
 #        select: nombre
+    referente:
+        label: Referente
+        type: text
     inicio:
         label: Inicio proyectado
         type: datetime
@@ -36,6 +39,18 @@ columns:
         type: partial
         path: $/gibraltarsf/pmo/controllers/etapas/_avance.htm
         align: right
+    spi:
+        label: SPI [%]
+        type: partial
+        path: $/gibraltarsf/pmo/controllers/etapas/_spi.htm
+        sortable: false
+        searchable: false
+    cpi:
+        label: CPI [%]
+        type: partial
+        path: $/gibraltarsf/pmo/controllers/etapas/_cpi.htm
+        sortable: false
+        searchable: false
     estado:
         label: Estado
         type: text

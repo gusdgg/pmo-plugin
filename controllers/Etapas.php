@@ -219,10 +219,35 @@ class Etapas extends Controller
 
             $avance = round($avance / ($duracionTotal? $duracionTotal : 1) * 100) ;
 
+
+            /**
+             * Calculo SPI y CPI
+             * Índice de rendimiento de costos - Cost Performance Index (CPI) se calcula como CPI = EV / AC
+             * Índice de rendimiento del cronograma - Schedule Performance Index (SPI) se calcula como SPI = EV / PV
+             * 
+             */
+
+            $ev = 0;
+            $ac = 0;
+            $pv = 0;
+            foreach ($roots as $root) {
+                $ev += $root->getEV();
+                $ac += $root->getAC();
+                $pv += $root->getPV();
+            }
+            \Log::info('ev: ' . $ev);
+            \Log::info('ac: ' . $ac);
+            \Log::info('pv: ' . $pv);
+
+            $spi = round($pv > 0 ? (1 - ($ev / $pv)) * 100: 0, 2);
+            $cpi = round($ac > 0 ? (1 - ($ev / $ac)) * 100: 0, 2);
+
             $data = array(
                         "hitosCount" => $hitosCount,
                         "duracionProyecto" => $dias,
                         "avance" => $avance,
+                        "spi" => $spi,
+                        "cpi" => $cpi,
                     );
     
             $view = $this->makePartial('scoreboard', $data);

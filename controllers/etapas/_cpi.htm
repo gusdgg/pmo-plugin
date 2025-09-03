@@ -1,0 +1,12 @@
+<?
+$ev = $record->getEV();
+$ac = $record->getAC();
+$pv = $record->getPV();
+$spi = round($pv > 0  ? (1 - ($ev / $pv)) * 100: 0, 2);
+$cpi = round($ac > 0  ? (1 - ($ev / $ac)) * 100: 0, 2);
+
+
+ //echo $cpi . '( ev: ' . $ev . ' ac: ' . $ac . ' pv: ' . $pv . ')';
+ echo $cpi . '%';
+?>
+

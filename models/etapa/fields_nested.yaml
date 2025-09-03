@@ -94,10 +94,14 @@ fields:
             action: hide
             field: parent
             condition: value[]
-
     observaciones:
         label: Observaciones
         commentAbove: 'Notas o comentarios adicionales'
         span: auto
         type: textarea
         size: small
+    referente:
+        label: Referente
+        span: auto
+        type: text
+

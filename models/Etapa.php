@@ -1,7 +1,7 @@
 <?php namespace Gibraltarsf\Pmo\Models;
 
 use Model;
-
+use Carbon\Carbon;
 
 /**
  * Model
@@ -87,6 +87,103 @@ class Etapa extends Model
     }
 
 
+    public function getEV()
+    {
+
+        $dias = 0;
+        $children = $this->getChildren();
+
+        if ($children->count() == 0)  {
+            // HITOS
+            if ($this->fin && $this->inicio) {
+                $dias = ($this->fin->diffInDaysFiltered(function(\Carbon\Carbon $date) {
+                    return !($date->isSaturday() || $date->isSunday());
+                    //return !( $date->isSunday());
+                }, $this->inicio) + 1 ) * ($this->avance / 100);            
+            }
+        }
+        else {
+            // TAREAS RESUMEN
+            // Calculo el EV de cada children
+            $children->each(function($child) use (&$dias) {
+                $dias += $child->getEV();
+            });
+
+            
+        }
+
+        return $dias;
+
+    }
+
+    public function getPV()
+    {
+
+        $dias = 0;
+        $children = $this->getChildren();
+
+        if ($children->count() == 0)  {
+            // HITOS
+            // lo aplico solo si la tarea deberia haber comenzado
+            if ($this->inicio && Carbon::now()->startOfDay() > $this->inicio) {
+                $fin = Carbon::now()->startOfDay() > $this->fin ? $this->fin : Carbon::now()->startOfDay();
+                $dias = $fin->diffInDaysFiltered(function(\Carbon\Carbon $date) {
+                    return !($date->isSaturday() || $date->isSunday());
+                    //return !( $date->isSunday());
+                }, $this->inicio) + 1;            
+            }
+        }
+        else {
+            // TAREAS RESUMEN
+            // Calculo el EV de cada children
+            $children->each(function($child) use (&$dias) {
+                $dias += $child->getPV();
+            });
+
+            
+        }
+
+        return $dias;
+
+    }    
+
+    public function getAC()
+    {
+
+        $dias = 0;
+        $children = $this->getChildren();
+
+        if ($children->count() == 0)  {
+            // HITOS
+            if ($this->inicio_real) {
+                // si existe una fecha de fin real es que la tarea esta terminada
+                $fin = $this->fin_real ? $this->fin_real : $this->fin;
+                $dias = $fin->diffInDaysFiltered(function(\Carbon\Carbon $date) {
+                    return !($date->isSaturday() || $date->isSunday());
+                    //return !( $date->isSunday());
+                }, $this->inicio_real) + 1;  
+                // si la tarea no está terminada pongo el peso real
+                if (!$this->fin_real) {
+                    $dias = $dias * ($this->avance / 100);           
+                }
+                
+            }
+        }
+        else {
+            // TAREAS RESUMEN
+            // Calculo el EV de cada children
+            $children->each(function($child) use (&$dias) {
+                $dias += $child->getAC();
+            });
+
+            
+        }
+
+        return $dias;
+
+    } 
+
+
     public function getDuracion()
     {
         $dias = 0;
@@ -98,7 +195,7 @@ class Etapa extends Model
                 $dias = $this->fin->diffInDaysFiltered(function(\Carbon\Carbon $date) {
                     return !($date->isSaturday() || $date->isSunday());
                     //return !( $date->isSunday());
-                }, $this->inicio);            
+                }, $this->inicio)+1;            
             }
         }
         else {
@@ -110,7 +207,7 @@ class Etapa extends Model
                 $dias = $max_fin->diffInDaysFiltered(function(\Carbon\Carbon $date) {
                     return !($date->isSaturday() || $date->isSunday());
                         //return !( $date->isSunday());
-                    }, $min_inicio);
+                    }, $min_inicio)+1;
             }
         }
 

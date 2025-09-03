@@ -40,6 +40,9 @@ class BuilderTableCreateGibraltarsfPmoEtapas extends Migration
         $table->index('parent_id');
         $table->index('estado');
         
+        $table->string('referente')->nullable();
+        $table->string('fase')->nullable();
+        
         
     });
 }
