@@ -239,8 +239,8 @@ class Etapas extends Controller
             \Log::info('ac: ' . $ac);
             \Log::info('pv: ' . $pv);
 
-            $spi = round($pv > 0 ? (1 - ($ev / $pv)) * 100: 0, 2);
-            $cpi = round($ac > 0 ? (1 - ($ev / $ac)) * 100: 0, 2);
+            $spi = round($pv > 0 ? ( ($ev / $pv)) : 0, 2);
+            $cpi = round($ac > 0 ? ( ($ev / $ac)) : 0, 2);
 
             $data = array(
                         "hitosCount" => $hitosCount,

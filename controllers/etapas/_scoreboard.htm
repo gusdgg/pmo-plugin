@@ -29,13 +29,14 @@
 
             <div class="scoreboard-item title-value">
                 <h4>SPI</h4>
-                <p class="<?= $spi < 0 ? 'positive' : 'negative' ?>"><?= number_format( $spi , 2, ',', '.')?>%</p>
-                <p class="description"></p>
+                <p class="<?= $spi > 1 ? 'positive' : 'negative' ?>"><?= number_format( $spi , 2, ',', '.')?></p>
+                <? $desvio = abs(1 - $spi) * 100; ?>
+                <p class="description"><?= $spi > 1 ? "$desvio% Adelantado" : "$desvio% Retrasado" ?></p>
             </div>
 
             <div class="scoreboard-item title-value">
                 <h4>CPI</h4>
-                <p class="<?= $cpi < 0 ? 'positive' : 'negative' ?>"><?= number_format( $cpi , 2, ',', '.')?>%</p>
+                <p class="<?= $cpi > 1 ? 'positive' : 'negative' ?>"><?= number_format( $cpi , 2, ',', '.')?></p>
                 <p class="description"></p>
             </div>
             
